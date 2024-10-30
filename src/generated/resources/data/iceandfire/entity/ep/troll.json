@@ -1,0 +1,9 @@
+{
+  "entity": "iceandfire:troll",
+  "evolution": "tensura:none",
+  "maxEP": 6500,
+  "minEP": 5750,
+  "skills": [
+    "tensura:strength"
+  ]
+}

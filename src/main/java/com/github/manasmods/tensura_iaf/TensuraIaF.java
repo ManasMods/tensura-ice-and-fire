@@ -1,5 +1,7 @@
 package com.github.manasmods.tensura_iaf;
 
+import com.github.manasmods.tensura_iaf.data.gen.IafEntityEPProvider;
+import com.github.manasmods.tensura_iaf.data.gen.IafEntityTypeTagProvider;
 import lombok.Getter;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,8 +18,11 @@ public class TensuraIaF {
 
     public TensuraIaF() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::generateData);
     }
 
-    private void generateData(final GatherDataEvent e) {
+    private void generateData(final GatherDataEvent event) {
+        event.getGenerator().addProvider(event.includeServer(), new IafEntityEPProvider(event));
+        event.getGenerator().addProvider(event.includeServer(), new IafEntityTypeTagProvider(event));
     }
 }

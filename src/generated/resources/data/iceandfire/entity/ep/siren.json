@@ -1,0 +1,11 @@
+{
+  "entity": "iceandfire:siren",
+  "evolution": "tensura:none",
+  "maxEP": 3250,
+  "minEP": 3000,
+  "skills": [
+    "tensura:water_breathing",
+    "tensura:water_current_control",
+    "tensura:charm"
+  ]
+}

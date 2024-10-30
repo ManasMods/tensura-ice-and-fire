@@ -1,0 +1,10 @@
+{
+  "entity": "iceandfire:myrmex_sentinel",
+  "evolution": "tensura:none",
+  "maxEP": 7500,
+  "minEP": 6750,
+  "skills": [
+    "tensura:poison",
+    "tensura:poison_resistance"
+  ]
+}

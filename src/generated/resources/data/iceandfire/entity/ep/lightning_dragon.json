@@ -1,0 +1,14 @@
+{
+  "entity": "iceandfire:lightning_dragon",
+  "evolution": "tensura:none",
+  "maxEP": 40000,
+  "minEP": 20000,
+  "skills": [
+    "tensura:dragon_skin",
+    "tensura:dragon_eye",
+    "tensura:dragon_ear",
+    "tensura:thunder_breath",
+    "tensura:wind_attack_resistance",
+    "tensura:electricity_resistance"
+  ]
+}

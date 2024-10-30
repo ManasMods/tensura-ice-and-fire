@@ -1,0 +1,11 @@
+{
+  "entity": "iceandfire:sea_serpent",
+  "evolution": "tensura:none",
+  "maxEP": 11000,
+  "minEP": 9500,
+  "skills": [
+    "tensura:water_breathing",
+    "tensura:water_current_control",
+    "tensura:hydraulic_propulsion"
+  ]
+}

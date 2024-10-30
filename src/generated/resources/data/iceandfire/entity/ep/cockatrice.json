@@ -1,0 +1,9 @@
+{
+  "entity": "iceandfire:cockatrice",
+  "evolution": "tensura:none",
+  "maxEP": 8000,
+  "minEP": 6000,
+  "skills": [
+    "tensura:corrosion"
+  ]
+}

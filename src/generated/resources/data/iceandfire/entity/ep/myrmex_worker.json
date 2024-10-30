@@ -1,0 +1,10 @@
+{
+  "entity": "iceandfire:myrmex_worker",
+  "evolution": "tensura:none",
+  "maxEP": 1100,
+  "minEP": 900,
+  "skills": [
+    "tensura:poison",
+    "tensura:poison_resistance"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "entity": "iceandfire:gorgon",
+  "evolution": "tensura:none",
+  "maxEP": 110000,
+  "minEP": 95000,
+  "skills": [
+    "tensura:snake_eye"
+  ]
+}

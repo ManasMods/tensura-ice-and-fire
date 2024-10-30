@@ -1,0 +1,9 @@
+{
+  "entity": "iceandfire:dread_lich",
+  "evolution": "tensura:none",
+  "maxEP": 155000,
+  "minEP": 140000,
+  "skills": [
+    "tensura:cold_resistance"
+  ]
+}

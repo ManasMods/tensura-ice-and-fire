@@ -1,0 +1,9 @@
+{
+  "entity": "iceandfire:dread_horse",
+  "evolution": "tensura:none",
+  "maxEP": 3000,
+  "minEP": 1000,
+  "skills": [
+    "tensura:cold_resistance"
+  ]
+}

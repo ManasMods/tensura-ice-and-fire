@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        maven { url 'https://maven.minecraftforge.net' }
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
     }
@@ -48,6 +49,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
             property 'forge.logging.mojang.level', 'debug'
             property 'mixin.debug.export', 'true'
+            arg "-mixin.config=tensura_iaf.mixins.json"
 
             mods {
                 tensura_iaf {
@@ -61,6 +63,7 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             property 'mixin.debug.export', 'true'
+            arg "-mixin.config=tensura_iron_spell.mixins.json"
 
             arg "nogui"
             mods {
@@ -91,6 +94,7 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             property 'forge.enabledGameTestNamespaces', "${modId}"
+            arg "-mixin.config=tensura_iron_spell.mixins.json"
 
             mods {
                 tensura_iaf {
@@ -110,6 +114,15 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
     mavenCentral()
     maven { url = 'https://maven.minecraftforge.net' }
+    maven {
+        url = 'https://nexus.nighti.dev/repository/manasmods/'
+        credentials {
+            username System.getenv().getOrDefault("MANAS_REPO_USER", nexusUsername)
+            password System.getenv().getOrDefault("MANAS_REPO_USER_PASSWORD", nexusPassword)
+        }
+    }
+
+    maven { url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
 
     maven {
         // location of the maven that hosts JEI files since January 2023
@@ -122,16 +135,7 @@ repositories {
         url = "https://modmaven.dev"
     }
 
-    exclusiveContent {
-        forRepository {
-            maven {
-                url "https://cursemaven.com"
-            }
-        }
-        filter {
-            includeGroup "curse.maven"
-        }
-    }
+    maven { url = "https://www.cursemaven.com" } // CurseForge
 
     maven { url "https://dl.cloudsmith.io/public/manasmods/manascore/maven/" }
 
@@ -147,16 +151,38 @@ repositories {
 dependencies {
     //Minecraft Forge
     minecraft "net.minecraftforge:forge:${minecraftVersion}-${forgeVersion}"
-    //Lombok
+
+    // ManasCore and Dependencies
+    implementation fg.deobf("com.github.manasmods:ManasCore:${minecraftVersion}-${manasCoreVersion}:slim")
+    implementation fg.deobf("com.lowdragmc.photon:photon-forge-${minecraftVersion}:${photonVersion}") {
+        transitive = false
+    }
+    implementation fg.deobf("com.lowdragmc.ldlib:ldlib-forge-${minecraftVersion}:${ldlibVersion}") {
+        transitive = false
+    }
+    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:${mixinExtrasVersion}"))
+    implementation("io.github.llamalad7:mixinextras-forge:${mixinExtrasVersion}")
+    runtimeOnly fg.deobf("software.bernie.geckolib:geckolib-forge-${geckolib_version}")
+
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    //ManasCore
-    implementation fg.deobf("com.github.manasmods:ManasCore:${minecraftVersion}-${manasCoreVersion}")
+
+    // Tensura
+    implementation fg.deobf("com.github.manasmods:TensuraMod:1.19.2-1.0.0.0")
+    implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${minecraftVersion}-${terraBlenderVersion}")
+
     //Ice and Fire
-    implementation fileTree("lib")
-    implementation "curse.maven:ice-and-fire-dragons-264231:5122072"
-    implementation "curse.maven:citadel-331936:4556677"
+    implementation fg.deobf("curse.maven:citadel-331936:4556677")
+    implementation fg.deobf("curse.maven:ice-and-fire-dragons-264231:5037952")
+    implementation fg.deobf("curse.maven:atlasviewer-633577:4420382")
+    implementation fg.deobf("curse.maven:mob-entity-path-visualizer-590716:4063117")
+    implementation fg.deobf("curse.maven:terralith-513688:4823693")
+}
+
+mixin {
+    add sourceSets.main, "tensura_iaf.refmap.json"
+    config "tensura_iaf.mixins.json"
 }
 
 reobf {
@@ -172,7 +198,8 @@ jar {
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "tensura_iafsareus",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs"            : "tensura_iaf.mixins.json"
         ])
     }
 }

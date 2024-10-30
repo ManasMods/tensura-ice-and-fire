@@ -24,3 +24,9 @@ A Compat mod between Tensura:Reincarnated & Ice and Fire.
     versionRange = "${minecraftVersionCheck}"
     ordering = "NONE"
     side = "BOTH"
+[[dependencies.tensura_iaf]]
+    modId="manascore"
+    mandatory=true
+    versionRange="${manasVersionCheck}"
+    ordering="NONE"
+    side="BOTH"

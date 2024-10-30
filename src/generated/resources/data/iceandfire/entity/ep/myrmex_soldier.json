@@ -1,0 +1,10 @@
+{
+  "entity": "iceandfire:myrmex_soldier",
+  "evolution": "tensura:none",
+  "maxEP": 3500,
+  "minEP": 2750,
+  "skills": [
+    "tensura:poison",
+    "tensura:poison_resistance"
+  ]
+}

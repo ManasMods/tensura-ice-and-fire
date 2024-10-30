@@ -1,0 +1,10 @@
+{
+  "entity": "iceandfire:hippocampus",
+  "evolution": "tensura:none",
+  "maxEP": 6600,
+  "minEP": 5500,
+  "skills": [
+    "tensura:water_breathing",
+    "tensura:water_current_control"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "entity": "iceandfire:hydra",
+  "evolution": "tensura:none",
+  "maxEP": 110000,
+  "minEP": 95000,
+  "skills": [
+    "tensura:poison_resistance",
+    "tensura:water_attack_resistance",
+    "tensura:poisonous_breath",
+    "tensura:poison"
+  ]
+}

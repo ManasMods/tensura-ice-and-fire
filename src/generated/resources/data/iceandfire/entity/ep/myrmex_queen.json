@@ -1,0 +1,10 @@
+{
+  "entity": "iceandfire:myrmex_queen",
+  "evolution": "tensura:none",
+  "maxEP": 12000,
+  "minEP": 9000,
+  "skills": [
+    "tensura:poison",
+    "tensura:poison_resistance"
+  ]
+}

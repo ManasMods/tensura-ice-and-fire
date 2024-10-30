@@ -1,0 +1,9 @@
+{
+  "entity": "iceandfire:dread_thrall",
+  "evolution": "tensura:none",
+  "maxEP": 3200,
+  "minEP": 1200,
+  "skills": [
+    "tensura:cold_resistance"
+  ]
+}
