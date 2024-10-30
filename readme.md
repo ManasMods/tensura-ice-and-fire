@@ -1,63 +1,14 @@
-# ManasMods Modding Template
-This is a simple template to create new Mods without the need to always setup gradle and stuff.
+# TenSura Compat: Ice and Fire
 
-## Things you need to change
+[![CI](https://github.com/ManasMods/reincarnated_mod/workflows/CI/badge.svg)](https://github.com/ManasMods/reincarnated_mod/actions/workflows/gradle_ci.yml)
+![GitHub](https://img.shields.io/github/last-commit/thereapr/reincarnated_mod?logo=git&logoColor=FFFFFF)
+[![CodeFactor](https://www.codefactor.io/repository/github/manasmods/reincarnated_mod/badge/master)](https://www.codefactor.io/repository/github/manasmods/reincarnated_mod/overview/master)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b659e6afad474179a81579681ff34ccf)](https://www.codacy.com/gh/ManasMods/reincarnated_mod/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ManasMods/reincarnated_mod&amp;utm_campaign=Badge_Grade)
+[![DownloadCount](https://cf.way2muchnoise.eu/full_643695_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/tensura-mod-that-time-i-got-reincarnated-as-a-slime)
+[![Discord](https://img.shields.io/discord/831767201966456852.svg?color=7289DA&label=discord&logo=discord&logoColor=FFFFFF)](https://discord.gg/D9TkjYPpcg)
 
-File: `build.gradle`
+This Mod doesn't provide any new functionality for Minecraft itself. It requires TenSura: Reincarnated and Ice & Fire to work.
 
-Replace `template` with your Mod Id on the following lines and remove the "TODO" line above
-
-Lines:
-- 42
-- 56
-- 70
-- 84
-
----
-
-File: `gradle.properties`
-
-Replace `modId=mod_id` with `modId=` followed by your mod id.
-
-Replace `githubUrl=https://github.com/ManasMods/PROJECT_NAME` with `githubUrl=` followed by your GitHub Repository URL
-
-Replace `modName=Template Mod` with `modName=` followed by your mod display name
-
----
-
-Path: `src/main/resources/META-INF`
-
-File: `mods.toml`
-
-Provide a description of your Mod on line 17
-
----
-
-Path: `src/main/resources`
-
-File: `template.mixins.json`
-
-Rename file to your mod id `.mixins.json`
-
-Change the path of `"package": "com.github.manasmods.template.mixin",` to the path where your mixins are located.
-
-Replace `template` in `"refmap": "template.refmap.json",` with your mod id
-
----
-
-Path: `src/main/java/com/github/manasmods`
-
-Rename the Folder `template` to your mod id
-
----
-
-Path: `src/main/java/com/github/manasmods/<your mod id>`
-
-File: `Template.java`
-
-Rename `Template.java` to your main class name
-
-Replace `template` in `public static final String MOD_ID = "template"; //TODO replace template with your mod id` with your mod id and remove the "TODO" comment behind the `;`
-
----
-
+# Features
+- Default EP and Abilities (Skills/Magics/Battlewills) for Ice & Fire mobs.
+- Stage 4/5 Dragons drop Dragon Essences.
