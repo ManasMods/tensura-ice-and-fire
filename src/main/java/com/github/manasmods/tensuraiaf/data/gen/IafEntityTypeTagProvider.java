@@ -1,10 +1,10 @@
-package com.github.manasmods.tensura_iaf.data.gen;
+package com.github.manasmods.tensuraiaf.data.gen;
 
 import com.github.alexthe666.iceandfire.datagen.tags.IafEntityTags;
 import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
 import com.github.manasmods.tensura.data.TensuraTags;
 import com.github.manasmods.tensura.registry.entity.TensuraEntityTypes;
-import com.github.manasmods.tensura_iaf.TensuraIaF;
+import com.github.manasmods.tensuraiaf.TensuraIaF;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;

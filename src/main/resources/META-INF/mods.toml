@@ -3,7 +3,7 @@ loaderVersion = "${forgeLoaderVersion}"
 license = "All Rights Reserved"
 
 [[mods]]
-modId = "tensura_iaf"
+modId = "tensuraiaf"
 version = "${modVersion}"
 displayName = "Tensura Compat: Ice and Fire"
 
@@ -12,19 +12,19 @@ description = '''
 A Compat mod between Tensura:Reincarnated & Ice and Fire.
 '''
 
-[[dependencies.tensura_iaf]]
+[[dependencies.tensuraiaf]]
     modId = "forge"
     mandatory = true
     versionRange = "${forgeLoaderVersion}"
     ordering = "NONE"
     side = "BOTH"
-[[dependencies.tensura_iaf]]
+[[dependencies.tensuraiaf]]
     modId = "minecraft"
     mandatory = true
     versionRange = "${minecraftVersionCheck}"
     ordering = "NONE"
     side = "BOTH"
-[[dependencies.tensura_iaf]]
+[[dependencies.tensuraiaf]]
     modId="manascore"
     mandatory=true
     versionRange="${manasVersionCheck}"

@@ -1,4 +1,4 @@
-package com.github.manasmods.tensura_iaf.data.gen;
+package com.github.manasmods.tensuraiaf.data.gen;
 
 import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
 import com.github.manasmods.manascore.api.data.gen.CustomDataProvider;
@@ -7,6 +7,7 @@ import com.github.manasmods.tensura.registry.skill.CommonSkills;
 import com.github.manasmods.tensura.registry.skill.ExtraSkills;
 import com.github.manasmods.tensura.registry.skill.IntrinsicSkills;
 import com.github.manasmods.tensura.registry.skill.ResistanceSkills;
+import com.github.manasmods.tensuraiaf.registry.IafSkills;
 import com.google.gson.JsonElement;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -64,7 +65,6 @@ public class IafEntityEPProvider extends CustomDataProvider {
 
         List<ResourceLocation> hippoList = new ArrayList<>();
         hippoList.add(IntrinsicSkills.WATER_BREATHING.getId());
-        hippoList.add(CommonSkills.WATER_CURRENT_CONTROL.getId());
         EntityEPCount.of(EntityType.getKey(IafEntityRegistry.HIPPOCAMPUS.get()), 5500, 6600, hippoList).buildJson(biConsumer);
         EntityEPCount.of(EntityType.getKey(IafEntityRegistry.HIPPOGRYPH.get()), 9500, 12000).buildJson(biConsumer);
 
@@ -78,6 +78,7 @@ public class IafEntityEPProvider extends CustomDataProvider {
         List<ResourceLocation> iceDragonList = new ArrayList<>(dragonList);
         iceDragonList.add(ResistanceSkills.COLD_RESISTANCE.getId());
         iceDragonList.add(ResistanceSkills.WATER_ATTACK_RESISTANCE.getId());
+        iceDragonList.add(IafSkills.ICE_BREATH.getId());
         EntityEPCount.of(EntityType.getKey(IafEntityRegistry.ICE_DRAGON.get()), 20000, 40000, iceDragonList).buildJson(biConsumer);
 
         List<ResourceLocation> lightningDragonList = new ArrayList<>(dragonList);
@@ -98,13 +99,11 @@ public class IafEntityEPProvider extends CustomDataProvider {
 
         List<ResourceLocation> serpentList = new ArrayList<>();
         serpentList.add(IntrinsicSkills.WATER_BREATHING.getId());
-        serpentList.add(CommonSkills.WATER_CURRENT_CONTROL.getId());
         serpentList.add(CommonSkills.HYDRAULIC_PROPULSION.getId());
         EntityEPCount.of(EntityType.getKey(IafEntityRegistry.SEA_SERPENT.get()), 9500, 11000, serpentList).buildJson(biConsumer);
 
         List<ResourceLocation> sirenList = new ArrayList<>();
         sirenList.add(IntrinsicSkills.WATER_BREATHING.getId());
-        sirenList.add(CommonSkills.WATER_CURRENT_CONTROL.getId());
         sirenList.add(IntrinsicSkills.CHARM.getId());
         EntityEPCount.of(EntityType.getKey(IafEntityRegistry.SIREN.get()), 3000, 3250, sirenList).buildJson(biConsumer);
         EntityEPCount.of(EntityType.getKey(IafEntityRegistry.STYMPHALIAN_BIRD.get()), 1500, 2000).buildJson(biConsumer);

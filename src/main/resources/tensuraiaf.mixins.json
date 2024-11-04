@@ -1,12 +1,14 @@
 {
   "required": true,
-  "package": "com.github.manasmods.tensura_iaf.core",
+  "package": "com.github.manasmods.tensuraiaf.core",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "tensura_iaf.refmap.json",
+  "refmap": "tensuraiaf.refmap.json",
   "injectors": {
     "defaultRequire": 1
   },
   "mixins": [
+    "MixinFrozenProperties",
+    "MixinSirenProperties"
   ],
   "minVersion": "0.8",
   "client": [

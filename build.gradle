@@ -49,10 +49,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
             property 'forge.logging.mojang.level', 'debug'
             property 'mixin.debug.export', 'true'
-            arg "-mixin.config=tensura_iaf.mixins.json"
+            arg "-mixin.config=tensuraiaf.mixins.json"
 
             mods {
-                tensura_iaf {
+                tensuraiaf {
                     source sourceSets.main
                 }
             }
@@ -63,11 +63,10 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             property 'mixin.debug.export', 'true'
-            arg "-mixin.config=tensura_iron_spell.mixins.json"
 
             arg "nogui"
             mods {
-                tensura_iaf {
+                tensuraiaf {
                     source sourceSets.main
                 }
             }
@@ -83,7 +82,7 @@ minecraft {
             args '--mod', "${modId}", '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', "manascore"
 
             mods {
-                tensura_iaf {
+                tensuraiaf {
                     source sourceSets.main
                 }
             }
@@ -97,7 +96,7 @@ minecraft {
             arg "-mixin.config=tensura_iron_spell.mixins.json"
 
             mods {
-                tensura_iaf {
+                tensuraiaf {
                     source sourceSets.main
                     source sourceSets.test
                 }
@@ -169,7 +168,7 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     // Tensura
-    implementation fg.deobf("com.github.manasmods:TensuraMod:1.19.2-1.0.0.0")
+    implementation fg.deobf("com.github.manasmods:TensuraMod:${minecraftVersion}-${tensuraVersion}")
     implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${minecraftVersion}-${terraBlenderVersion}")
 
     //Ice and Fire
@@ -181,8 +180,8 @@ dependencies {
 }
 
 mixin {
-    add sourceSets.main, "tensura_iaf.refmap.json"
-    config "tensura_iaf.mixins.json"
+    add sourceSets.main, "tensuraiaf.refmap.json"
+    config "tensuraiaf.mixins.json"
 }
 
 reobf {
@@ -192,14 +191,14 @@ reobf {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "tensura_iaf",
-                "Specification-Vendor"    : "tensura_iafsareus",
+                "Specification-Title"     : "tensuraiaf",
+                "Specification-Vendor"    : "tensuraiafsareus",
                 "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "tensura_iafsareus",
+                "Implementation-Vendor"   : "tensuraiafsareus",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs"            : "tensura_iaf.mixins.json"
+                "MixinConfigs"            : "tensuraiaf.mixins.json"
         ])
     }
 }

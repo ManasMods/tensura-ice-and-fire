@@ -1,10 +1,10 @@
-// 1.19.2	2024-10-30T12:06:30.7281826	Tags for minecraft:entity_type
+// 1.19.2	2024-11-04T03:04:29.336436	Tags for minecraft:entity_type
 d44be6fd0cf48175080975d52a78dd04dce6a8c5 data/forge/tags/entity_types/boss_for_hero.json
+330143c635c9e5d0a6cd1150de00dfbc27500ea9 data/forge/tags/entity_types/can_be_named.json
 200dac2ec457b3cf7ffd0401dc929ce9444b8919 data/forge/tags/entity_types/cold_blooded.json
 5257c99f47898627d65f7319a2ed3ab209d4af4f data/forge/tags/entity_types/cold_source.json
 36c9e6d8e1cbd8b5bf77afac5b6a8555f2d086d2 data/forge/tags/entity_types/drop_crystal.json
 6f7f5eaa3ab2e77ad6f4831f30bec6682ec1fae7 data/forge/tags/entity_types/full_gravity_control.json
-330143c635c9e5d0a6cd1150de00dfbc27500ea9 data/forge/tags/entity_types/nameable.json
 a8f53f4b6838373fff7d14b0bbef33740d3827ed data/forge/tags/entity_types/no_blood.json
 8a8554242dd0dd141768f1646b3e29e89802d222 data/forge/tags/entity_types/no_charisma.json
 cb1992282652a659ad001e00053b31a58030b08e data/forge/tags/entity_types/no_fear.json
