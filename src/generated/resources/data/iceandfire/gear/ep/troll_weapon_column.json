@@ -1,0 +1,7 @@
+{
+  "evolvingItem": "minecraft:air",
+  "gainEP": 0.02,
+  "item": "iceandfire:troll_weapon_column",
+  "maxEP": 80000,
+  "minEP": 5000
+}

@@ -1,0 +1,7 @@
+{
+  "evolvingItem": "minecraft:air",
+  "gainEP": 0.03,
+  "item": "iceandfire:dragonsteel_fire_axe",
+  "maxEP": 1000000,
+  "minEP": 48000
+}

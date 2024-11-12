@@ -1,0 +1,7 @@
+{
+  "evolvingItem": "minecraft:air",
+  "gainEP": 0.015,
+  "item": "iceandfire:dragonbone_sword_fire",
+  "maxEP": 25000,
+  "minEP": 6000
+}

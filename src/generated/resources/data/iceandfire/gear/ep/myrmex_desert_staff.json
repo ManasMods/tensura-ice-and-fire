@@ -1,0 +1,7 @@
+{
+  "evolvingItem": "minecraft:air",
+  "gainEP": 0.015,
+  "item": "iceandfire:myrmex_desert_staff",
+  "maxEP": 18000,
+  "minEP": 2000
+}

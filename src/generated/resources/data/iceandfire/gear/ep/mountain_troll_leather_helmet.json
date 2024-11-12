@@ -1,0 +1,7 @@
+{
+  "evolvingItem": "minecraft:air",
+  "gainEP": 0.02,
+  "item": "iceandfire:mountain_troll_leather_helmet",
+  "maxEP": 8000,
+  "minEP": 5000
+}

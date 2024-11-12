@@ -1,0 +1,7 @@
+{
+  "evolvingItem": "minecraft:air",
+  "gainEP": 0.01,
+  "item": "iceandfire:hippogryph_sword",
+  "maxEP": 10000,
+  "minEP": 1000
+}

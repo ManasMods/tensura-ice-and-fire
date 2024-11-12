@@ -1,0 +1,7 @@
+{
+  "evolvingItem": "minecraft:air",
+  "gainEP": 0.02,
+  "item": "iceandfire:armor_bronze_helmet",
+  "maxEP": 1000000,
+  "minEP": 6000
+}

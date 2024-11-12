@@ -1,0 +1,7 @@
+{
+  "evolvingItem": "minecraft:air",
+  "gainEP": 0.025,
+  "item": "iceandfire:tide_deepblue_chestplate",
+  "maxEP": 80000,
+  "minEP": 8000
+}

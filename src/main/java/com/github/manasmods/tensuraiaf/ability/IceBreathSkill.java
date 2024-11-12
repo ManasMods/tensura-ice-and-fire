@@ -4,14 +4,25 @@ import com.github.manasmods.manascore.api.skills.ManasSkillInstance;
 import com.github.manasmods.tensura.ability.SkillHelper;
 import com.github.manasmods.tensura.ability.skill.Skill;
 import com.github.manasmods.tensura.entity.magic.breath.BreathEntity;
+import com.github.manasmods.tensuraiaf.TensuraIaF;
 import com.github.manasmods.tensuraiaf.registry.IafEntityTypes;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
 
+import javax.annotation.Nullable;
+
 public class IceBreathSkill extends Skill {
     public IceBreathSkill() {
         super(SkillType.INTRINSIC);
+    }
+
+    @Nullable
+    public ResourceLocation getSkillIcon() {
+        ResourceLocation id = this.getRegistryName();
+        if (id == null) return new ResourceLocation(TensuraIaF.MOD_ID, "textures/temp_textures/item/confused_rimuru.png");
+        return new ResourceLocation(TensuraIaF.MOD_ID, "textures/skill/" + getType().getNamespace() + "/" + id.getPath().replace('/', '.') + ".png");
     }
 
     public double magiculeCost(LivingEntity entity, ManasSkillInstance instance) {
