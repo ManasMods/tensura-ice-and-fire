@@ -11,5 +11,6 @@ This Mod doesn't provide any new functionality for Minecraft itself. It requires
 
 # Features
 - Default EP and Abilities (Skills/Magics/Battlewills) for Ice & Fire mobs.
-- Stage 4/5 Dragons drop Dragon Essences.
+- Default EP for Ice & Fire gears.
+- Stage 4/5 Dragons drop Dragon Essences - Configuarable.
 - Entity/Item/Block tags for Ice & Fire's contents.
