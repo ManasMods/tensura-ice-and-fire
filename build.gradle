@@ -230,13 +230,13 @@ def replaceResources = tasks.register("replaceResources", Copy) {
         def forgeLoaderVersion = forgeVersion.substring(0, forgeVersion.indexOf('.'))
         def nextMajorMinecraftVersion = getNextMajorMinecraftVersion(minecraftVersion)
         def minecraftVersionCheck = "[${minecraftVersion},${nextMajorMinecraftVersion})"
-        def manasVersionCheck = "[${manasCoreVersion},)"
+        def iafVersionCheck = "[1.19.2-2.1.13+build.beta-3,)"
 
         include "META-INF/mods.toml"
         expand 'modVersion': "${modVersion}",
                 'forgeLoaderVersion': "[${forgeLoaderVersion},)",
                 'minecraftVersionCheck': "${minecraftVersionCheck}",
-                'manasVersionCheck': "${manasVersionCheck}"
+                'iafVersionCheck': "${iafVersionCheck}"
     }
     it.into "$buildDir/resources/main/"
 }
