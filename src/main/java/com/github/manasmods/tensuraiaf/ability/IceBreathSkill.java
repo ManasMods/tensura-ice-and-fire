@@ -36,7 +36,7 @@ public class IceBreathSkill extends Skill {
 
     public boolean onHeld(ManasSkillInstance instance, LivingEntity entity, int heldTicks) {
         if (heldTicks % 20 == 0 && SkillHelper.outOfMagicule(entity, instance)) return false;
-        if (heldTicks % 200 == 0 && heldTicks > 0) addMasteryPoint(instance, entity);
+        if (heldTicks % 100 == 0 && heldTicks > 0) addMasteryPoint(instance, entity);
 
         BreathEntity.spawnBreathEntity(IafEntityTypes.ICE_BREATH.get(), entity, instance, magiculeCost(entity, instance));
         entity.getLevel().playSound(null, entity.getX(), entity.getY(), entity.getZ(),
