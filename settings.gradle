@@ -1,9 +1,14 @@
 pluginManagement {
     repositories {
+        maven { url "https://maven.fabricmc.net/" }
+        maven { url "https://maven.architectury.dev/" }
+        maven { url "https://files.minecraftforge.net/maven/" }
         gradlePluginPortal()
-        maven { url = 'https://maven.minecraftforge.net/' }
-        maven { url = 'https://maven.parchmentmc.org' }
     }
 }
 
-rootProject.name = 'tensuraiaf'
+rootProject.name = 'tensura_iaf'
+
+include 'common'
+include 'fabric'
+include 'neoforge'

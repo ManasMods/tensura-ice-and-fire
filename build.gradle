@@ -1,265 +1,338 @@
-buildscript {
-    repositories {
-        maven { url 'https://maven.minecraftforge.net' }
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'org.spongepowered:mixingradle:0.7.+'
-    }
-}
-
 plugins {
-    id 'idea'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id 'maven-publish'
-    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'dev.architectury.loom' version '1.7-SNAPSHOT' apply false
+    id 'architectury-plugin' version '3.4-SNAPSHOT'
+    id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
+    id "io.freefair.lombok" version "8.10" apply false
+    id "com.github.gmazzo.buildconfig" version "5.4.0" apply false
+    id "idea"
+    id 'org.jreleaser' version '1.13.1' apply false
 }
 
-apply plugin: 'org.spongepowered.mixin'
-
-ext {
-    if (!project.hasProperty('manasmodsUsername')) {
-        System.out.println("No ManasMods Repo User found.")
-        //DO NOT WRITE ANYTHING INTO THIS FIELD! ANYONE CEN SEE THIS FIELD!!
-        manasmodsUsername = ""
-    }
-
-    if (!project.hasProperty('manasmodsPassword')) {
-        System.out.println("No ManasMods Repo User password found.")
-        //DO NOT WRITE ANYTHING INTO THIS FIELD! ANYONE CEN SEE THIS FIELD!!
-        manasmodsPassword = ""
-    }
+architectury {
+    minecraft = project.minecraft_version
 }
 
-version = "${minecraftVersion}-${modVersion}"
-group = 'com.github.manasmods'
-archivesBaseName = "${modId}"
+allprojects {
+    group = rootProject.maven_group
+    version = rootProject.mod_version
+}
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+subprojects {
+    apply plugin: 'dev.architectury.loom'
+    apply plugin: 'architectury-plugin'
+    apply plugin: 'maven-publish'
 
-minecraft {
-    mappings channel: 'parchment', version: "${parchmentVersion}-${minecraftVersion}"
-    copyIdeResources = true
+    apply plugin: 'org.jreleaser'
+    apply plugin: 'maven-publish'
 
-    runs {
-        client {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'forge.logging.mojang.level', 'debug'
-            property 'mixin.debug.export', 'true'
-            arg "-mixin.config=tensuraiaf.mixins.json"
+    idea {
+        module {
+            downloadJavadoc = true
+        }
+    }
 
-            mods {
-                tensuraiaf {
-                    source sourceSets.main
-                }
+    if (!project.name.endsWith("common")) {
+        apply plugin: 'com.github.johnrengelman.shadow'
+    } else {
+        apply plugin: 'com.github.gmazzo.buildconfig'
+    }
+
+    architectury {
+        if (!project.name.endsWith("common")) {
+            platformSetupLoomIde()
+        } else {
+            common rootProject.enabled_platforms.split(',')
+        }
+
+        if (project.name.endsWith("fabric")) {
+            fabric()
+        }
+
+        if (project.name.endsWith("neoforge")) {
+            neoForge()
+        }
+    }
+
+    loom {
+        enableTransitiveAccessWideners = true
+
+        runConfigs.each {
+            it.setIdeConfigGenerated(false)
+        }
+
+        mixin {
+            useLegacyMixinAp = false
+        }
+
+        interfaceInjection {
+            enableDependencyInterfaceInjection = true
+        }
+    }
+
+    if (!project.name.endsWith("common")) {
+        configurations {
+            common {
+                canBeResolved = true
+                canBeConsumed = false
+            }
+            compileClasspath.extendsFrom common
+            runtimeClasspath.extendsFrom common
+
+            if (project.name.endsWith("fabric")) {
+                developmentFabric.extendsFrom common
+            }
+
+            if (project.name.endsWith("neoforge")) {
+                developmentNeoForge.extendsFrom common
+            }
+
+            shadowBundle {
+                canBeResolved = true
+                canBeConsumed = false
             }
         }
-
-        server {
-            workingDirectory project.file('runServer')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'mixin.debug.export', 'true'
-
-            arg "nogui"
-            mods {
-                tensuraiaf {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        data {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'mixin.env.remapRefMap', 'true'
-
-            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', "${modId}", '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', "manascore"
-
-            mods {
-                tensuraiaf {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        gameTestServer {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', "${modId}"
-            arg "-mixin.config=tensura_iron_spell.mixins.json"
-
-            mods {
-                tensuraiaf {
-                    source sourceSets.main
-                    source sourceSets.test
-                }
-            }
-        }
-    }
-}
-
-jarJar.enable()
-
-// Include resources generated by data generators.
-sourceSets.main.resources { srcDir 'src/generated/resources' }
-
-repositories {
-    mavenCentral()
-    maven { url = 'https://maven.minecraftforge.net' }
-    maven {
-        url = 'https://nexus.nighti.dev/repository/manasmods/'
-        credentials {
-            username System.getenv().getOrDefault("MANAS_REPO_USER", nexusUsername)
-            password System.getenv().getOrDefault("MANAS_REPO_USER_PASSWORD", nexusPassword)
-        }
     }
 
-    maven { url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
-
-    maven {
-        // location of the maven that hosts JEI files since January 2023
-        name = "Jared's maven"
-        url = "https://maven.blamejared.com/"
-    }
-    maven {
-        // location of a maven mirror for JEI files, as a fallback
-        name = "ModMaven"
-        url = "https://modmaven.dev"
-    }
-
-    maven { url = "https://www.cursemaven.com" } // CurseForge
-
-    maven { url "https://dl.cloudsmith.io/public/manasmods/manascore/maven/" }
-
-    maven { url 'https://jitpack.io' }
-
-    maven { url "https://maven.firstdarkdev.xyz/snapshots" }
-
-    flatDir {
-        dirs 'lib'
-    }
-}
-
-dependencies {
-    //Minecraft Forge
-    minecraft "net.minecraftforge:forge:${minecraftVersion}-${forgeVersion}"
-
-    // ManasCore and Dependencies
-    implementation fg.deobf("com.github.manasmods:ManasCore:${minecraftVersion}-${manasCoreVersion}:slim")
-    implementation fg.deobf("com.lowdragmc.photon:photon-forge-${minecraftVersion}:${photonVersion}") {
-        transitive = false
-    }
-    implementation fg.deobf("com.lowdragmc.ldlib:ldlib-forge-${minecraftVersion}:${ldlibVersion}") {
-        transitive = false
-    }
-    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:${mixinExtrasVersion}"))
-    implementation("io.github.llamalad7:mixinextras-forge:${mixinExtrasVersion}")
-    runtimeOnly fg.deobf("software.bernie.geckolib:geckolib-forge-${geckolib_version}")
-
-    compileOnly "org.projectlombok:lombok:${lombokVersion}"
-    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-
-    // Tensura
-    implementation fg.deobf("com.github.manasmods:TensuraMod:${minecraftVersion}-${tensuraVersion}")
-    implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${minecraftVersion}-${terraBlenderVersion}")
-
-    //Ice and Fire
-    implementation fg.deobf("curse.maven:citadel-331936:4556677")
-    implementation fg.deobf("curse.maven:ice-and-fire-dragons-264231:5037952")
-    implementation fg.deobf("curse.maven:atlasviewer-633577:4420382")
-    implementation fg.deobf("curse.maven:mob-entity-path-visualizer-590716:4063117")
-    implementation fg.deobf("curse.maven:terralith-513688:4823693")
-}
-
-mixin {
-    add sourceSets.main, "tensuraiaf.refmap.json"
-    config "tensuraiaf.mixins.json"
-}
-
-reobf {
-    // jarJar {}
-}
-
-jar {
-    manifest {
-        attributes([
-                "Specification-Title"     : "tensuraiaf",
-                "Specification-Vendor"    : "tensuraiafsareus",
-                "Specification-Version"   : "1",
-                "Implementation-Title"    : project.name,
-                "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "tensuraiafsareus",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs"            : "tensuraiaf.mixins.json"
-        ])
-    }
-}
-
-jar.finalizedBy('reobfJar')
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifact jar
-        }
-    }
     repositories {
-        maven {
-            name = "manasmods"
-            credentials {
-                username System.getenv().getOrDefault("MANAS_REPO_USER", manasmodsUsername)
-                password System.getenv().getOrDefault("MANAS_REPO_USER_PASSWORD", manasmodsPassword)
+        if (project.name.endsWith("neoforge")) {
+            maven {
+                name = 'NeoForged'
+                url = 'https://maven.neoforged.net/releases'
             }
-            url "https://manasmods.bytesafe.dev/maven/manasmods"
+        }
+
+        maven {
+            name = "ManasCore"
+            url = 'https://nexus.nighti.dev/repository/manasmods-public/'
+        }
+
+        maven {
+            name = 'GeckoLib'
+            url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        }
+
+        maven {
+            name = "SmartBrainLib (SBL) Maven Repo"
+            url = "https://dl.cloudsmith.io/public/tslat/sbl/maven/"
+        }
+
+        maven {
+            url = 'https://maven.minecraftforge.net/'
+        }
+
+        maven {
+            name = "Jared's maven"
+            url = "https://maven.blamejared.com/"
+        }
+
+        maven {
+            name = "ModMaven"
+            url = "https://modmaven.dev"
+        }
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = "Modrinth"
+                    url = "https://api.modrinth.com/maven"
+                }
+            }
+            //forRepositories(fg.repository)
+            filter {
+                includeGroup "maven.modrinth"
+            }
         }
     }
-}
 
-def replaceResources = tasks.register("replaceResources", Copy) {
-    it.outputs.upToDateWhen { false }
-    //Copy it into the build dir
-    it.from(sourceSets.main.resources) {
-        def forgeLoaderVersion = forgeVersion.substring(0, forgeVersion.indexOf('.'))
-        def nextMajorMinecraftVersion = getNextMajorMinecraftVersion(minecraftVersion)
-        def minecraftVersionCheck = "[${minecraftVersion},${nextMajorMinecraftVersion})"
-        def iafVersionCheck = "[1.19.2-2.1.13,)"
+    dependencies {
+        minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
+        mappings loom.officialMojangMappings()
 
-        include "META-INF/mods.toml"
-        expand 'modVersion': "${modVersion}",
-                'forgeLoaderVersion': "[${forgeLoaderVersion},)",
-                'minecraftVersionCheck': "${minecraftVersionCheck}",
-                'iafVersionCheck': "${iafVersionCheck}"
+        if (project.name.endsWith("common")) {
+            modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+            modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
+
+            modImplementation "io.github.manasmods:manascore-attribute-common:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-command-common:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-config-common:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-inventory-common:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-keybind-common:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-network-common:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-race-common:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-skill-common:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-storage-common:$rootProject.manasCoreVersion"
+
+            modImplementation "software.bernie.geckolib:geckolib-common-$rootProject.minecraft_version:$rootProject.geckolib_version"
+            modImplementation "net.tslat.smartbrainlib:SmartBrainLib-common-$rootProject.minecraft_version:$rootProject.sbl_version"
+            modImplementation "com.github.glitchfiend:TerraBlender-common:$rootProject.minecraft_version-$rootProject.terrablender_version"
+
+            modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+            modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common:${jei_version}")
+        }
+
+        if (project.name.endsWith("fabric")) {
+            modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+            modImplementation "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
+            modImplementation "dev.architectury:architectury-fabric:$rootProject.architectury_api_version"
+
+            common(project(path: ':common', configuration: 'namedElements')) { transitive false }
+            shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
+
+            modImplementation "io.github.manasmods:manascore-attribute-fabric:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-command-fabric:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-config-fabric:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-inventory-fabric:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-keybind-fabric:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-network-fabric:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-race-fabric:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-skill-fabric:$rootProject.manasCoreVersion"
+            modImplementation "io.github.manasmods:manascore-storage-fabric:$rootProject.manasCoreVersion"
+
+            modImplementation "software.bernie.geckolib:geckolib-fabric-$rootProject.minecraft_version:$rootProject.geckolib_version"
+            modImplementation "net.tslat.smartbrainlib:SmartBrainLib-fabric-$rootProject.minecraft_version:$rootProject.sbl_version"
+            modImplementation "com.github.glitchfiend:TerraBlender-fabric:$rootProject.minecraft_version-$rootProject.terrablender_version"
+        }
+
+        if (project.name.endsWith("neoforge")) {
+            neoForge "net.neoforged:neoforge:$rootProject.neoforge_version"
+            modImplementation "dev.architectury:architectury-neoforge:$rootProject.architectury_api_version"
+
+            common(project(path: ':common', configuration: 'namedElements')) { transitive false }
+            shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
+
+            implementation "io.github.manasmods:manascore-attribute-neoforge:$rootProject.manasCoreVersion"
+            implementation "io.github.manasmods:manascore-command-neoforge:$rootProject.manasCoreVersion"
+            implementation "io.github.manasmods:manascore-config-neoforge:$rootProject.manasCoreVersion"
+            implementation "io.github.manasmods:manascore-inventory-neoforge:$rootProject.manasCoreVersion"
+            implementation "io.github.manasmods:manascore-keybind-neoforge:$rootProject.manasCoreVersion"
+            implementation "io.github.manasmods:manascore-network-neoforge:$rootProject.manasCoreVersion"
+            implementation "io.github.manasmods:manascore-race-neoforge:$rootProject.manasCoreVersion"
+            implementation "io.github.manasmods:manascore-skill-neoforge:$rootProject.manasCoreVersion"
+            implementation "io.github.manasmods:manascore-storage-neoforge:$rootProject.manasCoreVersion"
+
+            implementation "software.bernie.geckolib:geckolib-neoforge-$rootProject.minecraft_version:$rootProject.geckolib_version"
+            implementation "net.tslat.smartbrainlib:SmartBrainLib-neoforge-$rootProject.minecraft_version:$rootProject.sbl_version"
+            implementation "com.github.glitchfiend:TerraBlender-neoforge:$rootProject.minecraft_version-$rootProject.terrablender_version"
+        }
     }
-    it.into "$buildDir/resources/main/"
-}
 
-processResources {
-    duplicatesStrategy(DuplicatesStrategy.FAIL)
-    exclude('META-INF/mods.toml')
-    configure { finalizedBy(replaceResources) }
-}
+    java {
+        withSourcesJar()
+        withJavadocJar()
 
-classes.configure {
-    dependsOn(replaceResources)
-}
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+    javadoc.options.addStringOption('Xdoclint:none', '-quiet')
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
+    tasks.withType(JavaCompile).configureEach {
+        it.options.release = 21
+    }
 
-static String getNextMajorMinecraftVersion(String currentVersion) {
-    def version = currentVersion.substring(0, currentVersion.indexOf('.'))
-    def majorVersion = currentVersion.substring(currentVersion.indexOf('.') + 1, currentVersion.indexOf('.', currentVersion.indexOf('.') + 1))
-    def majorInt = Integer.valueOf(majorVersion)
-    majorInt++
-    majorVersion = majorInt.toString()
-    return "${version}.${majorVersion}"
+    jreleaser {
+        gitRootSearch = true
+
+        signing {
+            active = 'ALWAYS'
+            armored = true
+        }
+
+        deploy {
+            maven {
+                mavenCentral {
+                    sonatype {
+                        active = 'ALWAYS'
+                        url = 'https://central.sonatype.com/api/v1/publisher'
+                        stagingRepository('build/staging-deploy')
+                    }
+                }
+            }
+        }
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                artifactId = base.archivesName.get()
+                from components.java
+
+                pom {
+                    name = "$mod_display_name"
+                    description = "An Open Source Minecraft Modding Library"
+                    url = "https://github.com/ManasMods/ManasCore"
+
+                    licenses {
+                        license {
+                            name = "GNU General Public License 3"
+                            url = "https://www.gnu.org/licenses/gpl-3.0.html"
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id = 'Me'
+                            name = 'Its Me'
+                        }
+                    }
+                }
+            }
+        }
+
+        repositories {
+            maven {
+                url layout.buildDirectory.dir('staging-deploy')
+            }
+        }
+    }
+
+    tasks.publish.doFirst {
+        def dir = file(layout.buildDirectory.dir("jreleaser"))
+        dir.mkdirs()
+    }
+
+    if (!project.name.endsWith("common")) {
+        processResources {
+            def placeholders = [
+                    version              : project.version,
+                    mod_id               : "$archives_name",
+                    mod_name             : "$mod_display_name",
+                    architectury_version : architectury_api_version,
+                    minecraft_version    : minecraft_version,
+                    fabric_loader_version: fabric_loader_version,
+                    license              : "GPLv3"
+            ]
+
+            placeholders.forEach { key, value ->
+                inputs.property key, value
+            }
+
+            if (project.name.endsWith("neoforge")) {
+                filesMatching('META-INF/neoforge.mods.toml') {
+                    expand placeholders
+                }
+            } else if (project.name.endsWith("fabric")) {
+                filesMatching('fabric.mod.json') {
+                    expand placeholders
+
+                    filter { String line ->
+                        if (line.contains('"mixins":')) {
+                            var modifiedLine = "  \"accessWidener\": \"${project.mod_id}.accesswidener\",\n" + line
+
+                            return modifiedLine
+                        }
+                        return line
+                    }
+                }
+            }
+        }
+
+        shadowJar {
+            configurations = [project.configurations.shadowBundle]
+            archiveClassifier = 'dev-shadow'
+        }
+
+        remapJar {
+            input.set shadowJar.archiveFile
+        }
+    }
 }

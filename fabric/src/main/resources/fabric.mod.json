@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "tensura_iaf",
+  "version": "${version}",
+  "name": "TenSura Compat: Ice and Fire",
+  "description": "Compatibility mod to bridge Tensura:Reincarnated and Ice & Fire: Dragons.",
+  "authors": [
+    "MinhEragon"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/tensura_iaf/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.manasmods.tensura_iaf.fabric.TensuraIafFabric"
+    ],
+    "client": [
+      "io.github.manasmods.tensura_iaf.fabric.client.TensuraIafFabricClient"
+    ]
+  },
+  "mixins": [
+    "tensura_iaf.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.8",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
