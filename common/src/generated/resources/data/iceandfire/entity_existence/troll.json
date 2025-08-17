@@ -1,0 +1,11 @@
+{
+  "type": "iceandfire:troll",
+  "abilities": [
+    "tensura:strength"
+  ],
+  "max_aura": 500,
+  "max_magicule": 6500,
+  "min_aura": 250,
+  "min_magicule": 5750,
+  "spiritualHealth": 200
+}

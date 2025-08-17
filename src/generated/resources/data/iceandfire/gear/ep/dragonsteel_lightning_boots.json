@@ -1,7 +1,0 @@
-{
-  "evolvingItem": "minecraft:air",
-  "gainEP": 0.03,
-  "item": "iceandfire:dragonsteel_lightning_boots",
-  "maxEP": 1000000,
-  "minEP": 48000
-}

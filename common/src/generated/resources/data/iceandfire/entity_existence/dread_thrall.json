@@ -1,0 +1,9 @@
+{
+  "type": "iceandfire:dread_thrall",
+  "abilities": [
+    "tensura:cold_resistance"
+  ],
+  "max_magicule": 3200,
+  "min_magicule": 1200,
+  "spiritualHealth": 120
+}

@@ -1,0 +1,9 @@
+{
+  "type": "iceandfire:dread_lich",
+  "abilities": [
+    "tensura:cold_resistance"
+  ],
+  "max_magicule": 155000,
+  "min_magicule": 140000,
+  "spiritualHealth": 500
+}

@@ -1,0 +1,37 @@
+{
+  "type": "iceandfire:dragonbone_sword_fire",
+  "epGain": 0.015,
+  "minEP": 6000,
+  "uniqueEvolutions": [
+    {
+      "EP": 52000,
+      "attributes": [
+        {
+          "type": "minecraft:generic.attack_damage",
+          "amount": 13.0,
+          "slot": "mainhand"
+        }
+      ]
+    },
+    {
+      "EP": 225000,
+      "attributes": [
+        {
+          "type": "minecraft:generic.attack_damage",
+          "amount": 15.0,
+          "slot": "mainhand"
+        }
+      ]
+    },
+    {
+      "EP": 750000,
+      "attributes": [
+        {
+          "type": "minecraft:generic.attack_damage",
+          "amount": 29.0,
+          "slot": "mainhand"
+        }
+      ]
+    }
+  ]
+}

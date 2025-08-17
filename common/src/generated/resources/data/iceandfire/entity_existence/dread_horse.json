@@ -1,0 +1,9 @@
+{
+  "type": "iceandfire:dread_horse",
+  "abilities": [
+    "tensura:cold_resistance"
+  ],
+  "max_magicule": 3000,
+  "min_magicule": 1000,
+  "spiritualHealth": 120
+}

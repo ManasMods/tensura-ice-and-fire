@@ -1,0 +1,47 @@
+{
+  "type": "iceandfire:hippogryph_sword",
+  "epGain": 0.01,
+  "minEP": 1000,
+  "uniqueEvolutions": [
+    {
+      "EP": 18000,
+      "attributes": [
+        {
+          "type": "minecraft:generic.attack_damage",
+          "amount": 7.0,
+          "slot": "mainhand"
+        }
+      ]
+    },
+    {
+      "EP": 52000,
+      "attributes": [
+        {
+          "type": "minecraft:generic.attack_damage",
+          "amount": 13.0,
+          "slot": "mainhand"
+        }
+      ]
+    },
+    {
+      "EP": 225000,
+      "attributes": [
+        {
+          "type": "minecraft:generic.attack_damage",
+          "amount": 15.0,
+          "slot": "mainhand"
+        }
+      ]
+    },
+    {
+      "EP": 750000,
+      "attributes": [
+        {
+          "type": "minecraft:generic.attack_damage",
+          "amount": 29.0,
+          "slot": "mainhand"
+        }
+      ]
+    }
+  ]
+}

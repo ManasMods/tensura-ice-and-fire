@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "io.github.manasmods.tensura_iaf.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+    "MixinFrozenData",
+    "MixinSirenData"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

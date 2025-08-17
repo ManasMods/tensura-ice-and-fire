@@ -1,0 +1,11 @@
+{
+  "type": "iceandfire:cyclops",
+  "abilities": [
+    "tensura:strengthen_body"
+  ],
+  "max_aura": 4000,
+  "max_magicule": 8000,
+  "min_aura": 3000,
+  "min_magicule": 6000,
+  "spiritualHealth": 500
+}

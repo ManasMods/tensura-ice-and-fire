@@ -1,0 +1,16 @@
+{
+  "type": "iceandfire:lightning_dragon",
+  "abilities": [
+    "tensura:dragon_skin",
+    "tensura:dragon_eye",
+    "tensura:dragon_ear",
+    "tensura:thunder_breath",
+    "tensura:wind_attack_resistance",
+    "tensura:electricity_resistance"
+  ],
+  "max_aura": 10000,
+  "max_magicule": 30000,
+  "min_aura": 10000,
+  "min_magicule": 20000,
+  "spiritualHealth": 2000
+}

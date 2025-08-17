@@ -1,7 +1,0 @@
-{
-  "evolvingItem": "minecraft:air",
-  "gainEP": 0.02,
-  "item": "iceandfire:armor_red_chestplate",
-  "maxEP": 1000000,
-  "minEP": 6000
-}

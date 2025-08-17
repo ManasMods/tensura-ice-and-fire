@@ -1,0 +1,142 @@
+{
+  "type": "iceandfire:tide_purple_chestplate",
+  "epGain": 0.025,
+  "minEP": 8000,
+  "uniqueEvolutions": [
+    {
+      "EP": 52000,
+      "attributes": [
+        {
+          "type": "minecraft:generic.armor",
+          "amount": 3.0,
+          "slot": "head"
+        },
+        {
+          "type": "minecraft:generic.armor_toughness",
+          "amount": 3.0,
+          "slot": "head"
+        },
+        {
+          "type": "minecraft:generic.armor",
+          "amount": 3.0,
+          "slot": "chest"
+        },
+        {
+          "type": "minecraft:generic.armor_toughness",
+          "amount": 3.0,
+          "slot": "chest"
+        },
+        {
+          "type": "minecraft:generic.armor",
+          "amount": 3.0,
+          "slot": "legs"
+        },
+        {
+          "type": "minecraft:generic.armor_toughness",
+          "amount": 3.0,
+          "slot": "legs"
+        },
+        {
+          "type": "minecraft:generic.armor",
+          "amount": 3.0,
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:generic.armor_toughness",
+          "amount": 3.0,
+          "slot": "feet"
+        }
+      ]
+    },
+    {
+      "EP": 225000,
+      "attributes": [
+        {
+          "type": "minecraft:generic.armor",
+          "amount": 1.0,
+          "slot": "head"
+        },
+        {
+          "type": "minecraft:generic.armor_toughness",
+          "amount": 1.0,
+          "slot": "head"
+        },
+        {
+          "type": "minecraft:generic.armor",
+          "amount": 1.0,
+          "slot": "chest"
+        },
+        {
+          "type": "minecraft:generic.armor_toughness",
+          "amount": 1.0,
+          "slot": "chest"
+        },
+        {
+          "type": "minecraft:generic.armor",
+          "amount": 1.0,
+          "slot": "legs"
+        },
+        {
+          "type": "minecraft:generic.armor_toughness",
+          "amount": 1.0,
+          "slot": "legs"
+        },
+        {
+          "type": "minecraft:generic.armor",
+          "amount": 1.0,
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:generic.armor_toughness",
+          "amount": 1.0,
+          "slot": "feet"
+        }
+      ]
+    },
+    {
+      "EP": 750000,
+      "attributes": [
+        {
+          "type": "minecraft:generic.armor",
+          "amount": 1.0,
+          "slot": "head"
+        },
+        {
+          "type": "minecraft:generic.armor_toughness",
+          "amount": 2.0,
+          "slot": "head"
+        },
+        {
+          "type": "minecraft:generic.armor",
+          "amount": 1.0,
+          "slot": "chest"
+        },
+        {
+          "type": "minecraft:generic.armor_toughness",
+          "amount": 2.0,
+          "slot": "chest"
+        },
+        {
+          "type": "minecraft:generic.armor",
+          "amount": 1.0,
+          "slot": "legs"
+        },
+        {
+          "type": "minecraft:generic.armor_toughness",
+          "amount": 2.0,
+          "slot": "legs"
+        },
+        {
+          "type": "minecraft:generic.armor",
+          "amount": 1.0,
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:generic.armor_toughness",
+          "amount": 2.0,
+          "slot": "feet"
+        }
+      ]
+    }
+  ]
+}

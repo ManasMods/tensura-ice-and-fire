@@ -1,0 +1,7 @@
+// 1.21.1	2025-08-17T21:01:30.9858553	Tags for minecraft:item mod id tensura_iaf
+721c1a4d1d6b535e0977f9256f3cb2b9867f393d data/tensura/tags/item/dubious/ingredient_brewing.json
+79a802a848d0bb0129210f87a3a49c53cc416b2b data/tensura/tags/item/dubious/ingredient_crystal.json
+6d4f736e36878b0b9b64d976107e6ab834809a06 data/tensura/tags/item/dubious/ingredient_effect.json
+68650db7724c6f4c66cbf6460aad914798f67f95 data/tensura/tags/item/dubious/ingredient_magic.json
+6f0a5f41e70f282c47880206775588a2944eda3c data/tensura/tags/item/dubious/ingredient_poison.json
+c687aca29a7057d3d529f919ebb18ed9e680a1f1 data/tensura/tags/item/raw_monster_consumables.json

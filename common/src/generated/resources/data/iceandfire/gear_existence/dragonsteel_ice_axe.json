@@ -1,0 +1,26 @@
+{
+  "type": "iceandfire:dragonsteel_ice_axe",
+  "minEP": 48000,
+  "uniqueEvolutions": [
+    {
+      "EP": 225000,
+      "attributes": [
+        {
+          "type": "minecraft:generic.attack_damage",
+          "amount": 15.0,
+          "slot": "mainhand"
+        }
+      ]
+    },
+    {
+      "EP": 750000,
+      "attributes": [
+        {
+          "type": "minecraft:generic.attack_damage",
+          "amount": 29.0,
+          "slot": "mainhand"
+        }
+      ]
+    }
+  ]
+}

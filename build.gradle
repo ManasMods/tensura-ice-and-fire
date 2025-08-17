@@ -102,6 +102,15 @@ subprojects {
         }
 
         maven {
+            name = "Tensura"
+            url = 'https://nexus.nighti.dev/repository/manasmods/'
+            credentials {
+                username System.getenv().getOrDefault("MANAS_REPO_USER", nexusUsername)
+                password System.getenv().getOrDefault("MANAS_REPO_USER_PASSWORD", nexusPassword)
+            }
+        }
+
+        maven {
             name = "ManasCore"
             url = 'https://nexus.nighti.dev/repository/manasmods-public/'
         }
@@ -133,6 +142,15 @@ subprojects {
         exclusiveContent {
             forRepository {
                 maven {
+                    url "https://cursemaven.com"
+                }
+            }
+            filter {
+                includeGroup "curse.maven"
+            }
+
+            forRepository {
+                maven {
                     name = "Modrinth"
                     url = "https://api.modrinth.com/maven"
                 }
@@ -162,9 +180,14 @@ subprojects {
             modImplementation "io.github.manasmods:manascore-skill-common:$rootProject.manasCoreVersion"
             modImplementation "io.github.manasmods:manascore-storage-common:$rootProject.manasCoreVersion"
 
+            modImplementation "io.github.manasmods.tensura:common:$rootProject.tensuraVersion"
             modImplementation "software.bernie.geckolib:geckolib-common-$rootProject.minecraft_version:$rootProject.geckolib_version"
             modImplementation "net.tslat.smartbrainlib:SmartBrainLib-common-$rootProject.minecraft_version:$rootProject.sbl_version"
             modImplementation "com.github.glitchfiend:TerraBlender-common:$rootProject.minecraft_version-$rootProject.terrablender_version"
+
+            modImplementation "curse.maven:iceandfire-ce-1040076:6859514"
+            modImplementation "maven.modrinth:uranus:4mfB8LLj"
+            modImplementation "maven.modrinth:jupiter:yHfucqRJ"
 
             modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
             modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common:${jei_version}")
@@ -188,9 +211,14 @@ subprojects {
             modImplementation "io.github.manasmods:manascore-skill-fabric:$rootProject.manasCoreVersion"
             modImplementation "io.github.manasmods:manascore-storage-fabric:$rootProject.manasCoreVersion"
 
+            implementation "io.github.manasmods.tensura:fabric:$rootProject.tensuraVersion"
             modImplementation "software.bernie.geckolib:geckolib-fabric-$rootProject.minecraft_version:$rootProject.geckolib_version"
             modImplementation "net.tslat.smartbrainlib:SmartBrainLib-fabric-$rootProject.minecraft_version:$rootProject.sbl_version"
             modImplementation "com.github.glitchfiend:TerraBlender-fabric:$rootProject.minecraft_version-$rootProject.terrablender_version"
+
+            modImplementation "curse.maven:iceandfire-ce-1040076:6859514"
+            modImplementation "maven.modrinth:uranus:4mfB8LLj"
+            modImplementation "maven.modrinth:jupiter:yHfucqRJ"
         }
 
         if (project.name.endsWith("neoforge")) {
@@ -210,9 +238,14 @@ subprojects {
             implementation "io.github.manasmods:manascore-skill-neoforge:$rootProject.manasCoreVersion"
             implementation "io.github.manasmods:manascore-storage-neoforge:$rootProject.manasCoreVersion"
 
+            implementation "io.github.manasmods.tensura:neoforge:$rootProject.tensuraVersion"
             implementation "software.bernie.geckolib:geckolib-neoforge-$rootProject.minecraft_version:$rootProject.geckolib_version"
             implementation "net.tslat.smartbrainlib:SmartBrainLib-neoforge-$rootProject.minecraft_version:$rootProject.sbl_version"
             implementation "com.github.glitchfiend:TerraBlender-neoforge:$rootProject.minecraft_version-$rootProject.terrablender_version"
+
+            implementation "curse.maven:iceandfire-ce-1040076:6859516"
+            modImplementation "maven.modrinth:uranus:ASbYgzAy"
+            modImplementation "maven.modrinth:jupiter:6FVn8sRM"
         }
     }
 

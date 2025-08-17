@@ -1,0 +1,8 @@
+{
+  "type": "iceandfire:stymphalian_bird",
+  "max_aura": 500,
+  "max_magicule": 2000,
+  "min_aura": 250,
+  "min_magicule": 1500,
+  "spiritualHealth": 60
+}

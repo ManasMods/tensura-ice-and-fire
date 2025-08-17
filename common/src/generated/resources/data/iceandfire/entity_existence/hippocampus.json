@@ -1,0 +1,11 @@
+{
+  "type": "iceandfire:hippocampus",
+  "abilities": [
+    "tensura:water_breathing"
+  ],
+  "max_aura": 1000,
+  "max_magicule": 5600,
+  "min_aura": 1000,
+  "min_magicule": 4500,
+  "spiritualHealth": 100
+}

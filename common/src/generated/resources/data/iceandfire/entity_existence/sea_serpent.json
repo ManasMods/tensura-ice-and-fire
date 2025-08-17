@@ -1,0 +1,12 @@
+{
+  "type": "iceandfire:sea_serpent",
+  "abilities": [
+    "tensura:water_breathing",
+    "tensura:hydraulic_propulsion"
+  ],
+  "max_aura": 2000,
+  "max_magicule": 9000,
+  "min_aura": 1000,
+  "min_magicule": 8500,
+  "spiritualHealth": 1000
+}

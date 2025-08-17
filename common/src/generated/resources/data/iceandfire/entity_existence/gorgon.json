@@ -1,0 +1,11 @@
+{
+  "type": "iceandfire:gorgon",
+  "abilities": [
+    "tensura:snake_eye"
+  ],
+  "max_aura": 20000,
+  "max_magicule": 910000,
+  "min_aura": 10000,
+  "min_magicule": 85000,
+  "spiritualHealth": 2000
+}

@@ -1,7 +1,0 @@
-{
-  "evolvingItem": "minecraft:air",
-  "gainEP": 0.015,
-  "item": "iceandfire:cockatrice_scepter",
-  "maxEP": 20000,
-  "minEP": 5000
-}

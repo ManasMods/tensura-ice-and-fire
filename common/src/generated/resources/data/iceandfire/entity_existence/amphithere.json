@@ -1,0 +1,8 @@
+{
+  "type": "iceandfire:amphithere",
+  "max_aura": 500,
+  "max_magicule": 3500,
+  "min_aura": 250,
+  "min_magicule": 2500,
+  "spiritualHealth": 200
+}

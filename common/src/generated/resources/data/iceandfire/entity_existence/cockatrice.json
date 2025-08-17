@@ -1,0 +1,11 @@
+{
+  "type": "iceandfire:cockatrice",
+  "abilities": [
+    "tensura:corrosion"
+  ],
+  "max_aura": 2000,
+  "max_magicule": 6000,
+  "min_aura": 1000,
+  "min_magicule": 5000,
+  "spiritualHealth": 80
+}

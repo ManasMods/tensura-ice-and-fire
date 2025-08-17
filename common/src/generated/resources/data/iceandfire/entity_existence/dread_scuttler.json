@@ -1,0 +1,9 @@
+{
+  "type": "iceandfire:dread_scuttler",
+  "abilities": [
+    "tensura:cold_resistance"
+  ],
+  "max_magicule": 5000,
+  "min_magicule": 2000,
+  "spiritualHealth": 100
+}

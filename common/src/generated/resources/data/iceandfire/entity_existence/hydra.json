@@ -1,0 +1,14 @@
+{
+  "type": "iceandfire:hydra",
+  "abilities": [
+    "tensura:poison_resistance",
+    "tensura:water_attack_resistance",
+    "tensura:poisonous_breath",
+    "tensura:poison"
+  ],
+  "max_aura": 20000,
+  "max_magicule": 90000,
+  "min_aura": 10000,
+  "min_magicule": 85000,
+  "spiritualHealth": 3000
+}

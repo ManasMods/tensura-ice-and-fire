@@ -1,0 +1,6 @@
+{
+  "type": "iceandfire:ghost",
+  "max_magicule": 3100,
+  "min_magicule": 2900,
+  "spiritualHealth": 100
+}
