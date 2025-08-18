@@ -303,8 +303,8 @@ subprojects {
 
                     developers {
                         developer {
-                            id = 'Me'
-                            name = 'Its Me'
+                            id = 'MinhEragon'
+                            name = 'Minh Eragon'
                         }
                     }
                 }
@@ -347,13 +347,15 @@ subprojects {
                 filesMatching('fabric.mod.json') {
                     expand placeholders
 
-                    filter { String line ->
-                        if (line.contains('"mixins":')) {
-                            var modifiedLine = "  \"accessWidener\": \"${project.mod_id}.accesswidener\",\n" + line
+                    if (true) {
+                        filter { String line ->
+                            if (line.contains('"mixins":')) {
+                                var modifiedLine = "  \"accessWidener\": \"${project.archives_name}.accesswidener\",\n" + line
 
-                            return modifiedLine
+                                return modifiedLine
+                            }
+                            return line
                         }
-                        return line
                     }
                 }
             }

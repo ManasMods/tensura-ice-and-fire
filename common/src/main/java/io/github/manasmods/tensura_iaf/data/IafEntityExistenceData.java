@@ -67,7 +67,7 @@ public class IafEntityExistenceData {
 		List<ResourceLocation> iceDragonList = new ArrayList<>(dragonList);
 		iceDragonList.add(ResistanceSkills.COLD_RESISTANCE.getId());
 		iceDragonList.add(ResistanceSkills.WATER_ATTACK_RESISTANCE.getId());
-		//iceDragonList.add(IafSkills.ICE_BREATH.getId());
+		iceDragonList.add(IntrinsicSkills.ICE_BREATH.getId());
 		register(context, EntityExistenceData.getDefault(IafEntities.ICE_DRAGON.getId(), 2000, 20000, 30000, 10000, 10000, iceDragonList));
 
 		List<ResourceLocation> lightningDragonList = new ArrayList<>(dragonList);

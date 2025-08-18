@@ -8,10 +8,10 @@
     "MinhEragon"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/tensura-compat-ice-fire",
+    "sources": "https://github.com/ManasMods/tensura-ice-and-fire"
   },
-  "license": "CC0-1.0",
+  "license": "All Rights Reserved",
   "icon": "assets/tensura_iaf/icon.png",
   "environment": "*",
   "entrypoints": {

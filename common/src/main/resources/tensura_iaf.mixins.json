@@ -6,8 +6,11 @@
   "client": [
   ],
   "mixins": [
+    "MixinFlameBreathProjectile",
     "MixinFrozenData",
-    "MixinSirenData"
+    "MixinIceBreathProjectile",
+    "MixinSirenData",
+    "MixinThunderBreathProjectile"
   ],
   "injectors": {
     "defaultRequire": 1
