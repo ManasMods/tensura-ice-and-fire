@@ -12,3 +12,4 @@ This Mod doesn't provide any new functionality for Minecraft itself. It requires
 - Melt dragon steels in dragon forges with Tensura's Dragon Breath Skills.
 - Stage 4/5 Dragons drop Dragon Essences - Configurable.
 - Entity/Item/Block tags for Ice & Fire's contents.
+- CANNOT_BE_CHAINED entity tag for boss balancing.
