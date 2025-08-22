@@ -1,12 +1,12 @@
-// 1.21.1	2025-08-17T21:20:15.8703696	Tags for minecraft:entity_type mod id tensura_iaf
-e2c76dec100375370b226eae894a1bcc0ea71e0b data/iceandfire/tags/entity_type/cyclops_unliftables.json
+// 1.21.1	2025-08-22T21:07:09.9008627	Tags for minecraft:entity_type mod id tensura_iaf
+33f9fcef84315aab55a98ba9c305bcb1c220d040 data/iceandfire/tags/entity_type/cyclops_unliftables.json
 6564d7e9ac99c4c7f0d06fee4570088796bf51ba data/iceandfire/tags/entity_type/immune_to_gorgon_stone.json
 d44be6fd0cf48175080975d52a78dd04dce6a8c5 data/tensura/tags/entity_type/boss_for_hero.json
 330143c635c9e5d0a6cd1150de00dfbc27500ea9 data/tensura/tags/entity_type/can_be_named.json
 9ab3a89a7ec260c546bf8c12a83eb2eb051d7a32 data/tensura/tags/entity_type/cold_blooded.json
 5257c99f47898627d65f7319a2ed3ab209d4af4f data/tensura/tags/entity_type/cold_source.json
 8c22f4613836ccf23a70f936d6613e5bdbada128 data/tensura/tags/entity_type/drop_crystal.json
-6f7f5eaa3ab2e77ad6f4831f30bec6682ec1fae7 data/tensura/tags/entity_type/full_gravity_control.json
+e0ef26b5688689a2b09283f5fb8fe6ccc6895d3c data/tensura/tags/entity_type/full_gravity_control.json
 2f4a7664a3ebb633f48c4f54202cca6edb344269 data/tensura/tags/entity_type/no_blood.json
 aafe483e36c1843bae954eef5e6025684b57b8ff data/tensura/tags/entity_type/no_charisma.json
 d44be6fd0cf48175080975d52a78dd04dce6a8c5 data/tensura/tags/entity_type/no_fear.json
@@ -14,3 +14,4 @@ d44be6fd0cf48175080975d52a78dd04dce6a8c5 data/tensura/tags/entity_type/no_mind_c
 d44be6fd0cf48175080975d52a78dd04dce6a8c5 data/tensura/tags/entity_type/no_possession.json
 da0db3cb46548798c23c6474be0091322821daec data/tensura/tags/entity_type/no_sound.json
 eec8384bb2ab15a939db47c31a0265fd153aef5b data/tensura/tags/entity_type/spiritual.json
+e2c76dec100375370b226eae894a1bcc0ea71e0b data/tensura_iaf/tags/entity_type/cannot_be_chained.json

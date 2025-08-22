@@ -6,10 +6,14 @@
   "client": [
   ],
   "mixins": [
+    "MixinEntityDragonBase",
+    "MixinEntityGorgon",
     "MixinFlameBreathProjectile",
     "MixinFrozenData",
     "MixinIceBreathProjectile",
+    "MixinItemChain",
     "MixinSirenData",
+    "MixinTensuraDamageHelper",
     "MixinThunderBreathProjectile"
   ],
   "injectors": {

@@ -5,11 +5,11 @@ import io.github.manasmods.manascore.config.api.ManasConfig;
 
 public class IafConfig extends ManasConfig {
     @Comment("The minimum stage of Dragon to drop Dragon Essence.")
-    public int minAura = 4;
+    public int minStageEssence = 4;
     @Comment("The maximum stage of Dragon to drop Dragon Essence.")
-    public int maxAura = 5;
+    public int maxStageEssence = 5;
     @Comment("The chance for Dragon to drop Dragon Essence.")
-    public double essenceChance = 10;
+    public float essenceChance = 0.5F;
 
     public String getFileName() {
         return "tensura/iaf_config";

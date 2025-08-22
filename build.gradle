@@ -370,4 +370,13 @@ subprojects {
             input.set shadowJar.archiveFile
         }
     }
+
+    if (!project.name.endsWith("common")) {
+        task copyJar(type: Copy) {
+            from remapJar
+            into "${rootProject.projectDir}/build/"
+            rename("${project.name}", "${project.archives_name}-${project.name}")
+        }
+        build.dependsOn copyJar
+    }
 }

@@ -6,6 +6,7 @@ import io.github.manasmods.tensura.data.TensuraEntityTags;
 import io.github.manasmods.tensura.registry.entity.HumanEntityTypes;
 import io.github.manasmods.tensura.registry.entity.MonsterEntityTypes;
 import io.github.manasmods.tensura_iaf.TensuraIaf;
+import io.github.manasmods.tensura_iaf.data.TensuraIafEntityTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
@@ -23,6 +24,8 @@ public class IafEntityTypeTagProvider extends EntityTypeTagsProvider {
 	}
 
 	protected void addTags(@NotNull HolderLookup.Provider provider) {
+		tag(TensuraIafEntityTags.CANNOT_BE_CHAINED).addTag(TensuraEntityTags.HERO_BOSS);
+
 		tag(TensuraEntityTags.DROP_CRYSTAL).add(IafEntities.AMPHITHERE.get(), IafEntities.COCKATRICE.get(),
 				IafEntities.CYCLOPS.get(), IafEntities.DEATH_WORM.get(), IafEntities.DREAD_BEAST.get(),
 				IafEntities.DREAD_GHOUL.get(), IafEntities.DREAD_KNIGHT.get(), IafEntities.DREAD_LICH.get(),
@@ -40,7 +43,7 @@ public class IafEntityTypeTagProvider extends EntityTypeTagsProvider {
 		tag(TensuraEntityTags.HERO_BOSS).add(IafEntities.FIRE_DRAGON.get(), IafEntities.DREAD_LICH.get(),
 				IafEntities.GORGON.get(), IafEntities.HYDRA.get(), IafEntities.ICE_DRAGON.get(),
 				IafEntities.LIGHTNING_DRAGON.get());
-		tag(TensuraEntityTags.FULL_GRAVITY_CONTROL).add(IafEntities.FIRE_DRAGON.get(),
+		tag(TensuraEntityTags.FULL_GRAVITY_CONTROL).add(IafEntities.FIRE_DRAGON.get(), IafEntities.ICE_DRAGON.get(),
 				IafEntities.DREAD_LICH.get(), IafEntities.LIGHTNING_DRAGON.get());
 
 		tag(TensuraEntityTags.NO_FEAR).add(IafEntities.FIRE_DRAGON.get(), IafEntities.DREAD_LICH.get(),
@@ -77,8 +80,8 @@ public class IafEntityTypeTagProvider extends EntityTypeTagsProvider {
 				IafEntities.ICE_DRAGON.get());
 
 		tag(IafEntityTags.IMMUNE_TO_GORGON_STONE).addTag(TensuraEntityTags.SPIRITUAL)
-				.add(MonsterEntityTypes.ELEMENTAL_COLOSSUS.get(), HumanEntityTypes.HINATA_SAKAGUCHI.get(),
-						MonsterEntityTypes.CHARYBDIS.get());
-		tag(IafEntityTags.CYCLOPS_UNLIFTABLES).addTag(TensuraEntityTags.HERO_BOSS);
+				.add(MonsterEntityTypes.ELEMENTAL_COLOSSUS.get(), HumanEntityTypes.HINATA_SAKAGUCHI.get(), MonsterEntityTypes.CHARYBDIS.get());
+		tag(IafEntityTags.CYCLOPS_UNLIFTABLES).addTag(TensuraEntityTags.HERO_BOSS)
+				.add(HumanEntityTypes.HINATA_SAKAGUCHI.get());
 	}
 }
