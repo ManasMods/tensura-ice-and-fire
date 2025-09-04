@@ -14,6 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MixinEntityGorgon {
     @Inject(at = @At(value = "HEAD"), method = "isBlindfolded", cancellable = true, remap = false)
     private static void isBlindfolded(LivingEntity target, CallbackInfoReturnable<Boolean> cir) {
+        if (target == null) return;
         if (target.getType().is(IafEntityTags.IMMUNE_TO_GORGON_STONE)) cir.setReturnValue(true);
         else if (SkillUtils.isSkillToggled(target, ResistanceSkills.ABNORMAL_CONDITION_NULLIFICATION.get())) cir.setReturnValue(true);
     }

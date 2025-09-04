@@ -1,3 +1,4 @@
-// 1.21.1	2025-08-17T21:01:30.9890586	Tags for minecraft:block mod id tensura_iaf
+// 1.21.1	2025-09-01T16:14:51.6688534	Tags for minecraft:block mod id tensura_iaf
 08c62f7f3572230edb3fb46615bf0f9b638566bd data/tensura/tags/block/skill/trap_blocks.json
 a1a0ef3943dae5a87bb4e672bd63244d8dd0e811 data/tensura/tags/block/skill/treasure_blocks.json
+d9228b94836549816f12d5541c502266a6aee4d2 data/tensura/tags/block/skill/unbreakable.json

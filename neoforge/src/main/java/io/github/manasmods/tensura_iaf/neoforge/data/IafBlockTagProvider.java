@@ -21,5 +21,13 @@ public class IafBlockTagProvider extends BlockTagsProvider {
 	protected void addTags(HolderLookup.Provider arg) {
 		tag(TensuraBlockTags.TRAP_BLOCKS).add(IafBlocks.DRAGON_ICE_SPIKES.get());
 		tag(TensuraBlockTags.TREASURE_BLOCKS).add(IafBlocks.GHOST_CHEST.get());
+		tag(TensuraBlockTags.SKILL_UNBREAKABLE).add(IafBlocks.DREAD_SPAWNER.get(),
+				IafBlocks.DREAD_PORTAL.get(), IafBlocks.DREAD_STONE.get(), IafBlocks.DREAD_STONE_BRICKS.get(),
+				IafBlocks.DREAD_STONE_BRICKS_STAIRS.get(), IafBlocks.DREAD_STONE_BRICKS_SLAB.get(),
+				IafBlocks.DREAD_STONE_BRICKS_CHISELED.get(), IafBlocks.DREAD_STONE_BRICKS_CRACKED.get(),
+				IafBlocks.DREAD_STONE_BRICKS_MOSSY.get(), IafBlocks.DREAD_STONE_TILE.get(),
+				IafBlocks.DREAD_STONE_FACE.get(), IafBlocks.DREAD_TORCH_WALL.get(),
+				IafBlocks.DREAD_TORCH.get(), IafBlocks.DREADWOOD_LOG.get(),
+				IafBlocks.DREADWOOD_PLANKS.get(), IafBlocks.DREADWOOD_PLANKS_LOCK.get());
 	}
 }

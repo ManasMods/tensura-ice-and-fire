@@ -26,6 +26,13 @@ public class IafEntityTypeTagProvider extends EntityTypeTagsProvider {
 	protected void addTags(@NotNull HolderLookup.Provider provider) {
 		tag(TensuraIafEntityTags.CANNOT_BE_CHAINED).addTag(TensuraEntityTags.HERO_BOSS);
 
+		tag(TensuraEntityTags.EP_INITIATE_EXCLUDED).add(IafEntities.STONE_STATUE.get());
+		tag(TensuraEntityTags.NO_ENERGY_DRAIN).add(IafEntities.STONE_STATUE.get());
+		tag(TensuraEntityTags.NO_EP_PLUNDER).add(IafEntities.STONE_STATUE.get());
+		tag(TensuraEntityTags.NO_SKILL_PLUNDER).add(IafEntities.STONE_STATUE.get());
+		tag(TensuraEntityTags.NO_SPIRITUAL_DAMAGE).add(IafEntities.STONE_STATUE.get());
+		tag(TensuraEntityTags.CAN_DIE_IN_LABYRINTH).add(IafEntities.STONE_STATUE.get());
+
 		tag(TensuraEntityTags.DROP_CRYSTAL).add(IafEntities.AMPHITHERE.get(), IafEntities.COCKATRICE.get(),
 				IafEntities.CYCLOPS.get(), IafEntities.DEATH_WORM.get(), IafEntities.DREAD_BEAST.get(),
 				IafEntities.DREAD_GHOUL.get(), IafEntities.DREAD_KNIGHT.get(), IafEntities.DREAD_LICH.get(),
@@ -48,13 +55,13 @@ public class IafEntityTypeTagProvider extends EntityTypeTagsProvider {
 
 		tag(TensuraEntityTags.NO_FEAR).add(IafEntities.FIRE_DRAGON.get(), IafEntities.DREAD_LICH.get(),
 				IafEntities.GORGON.get(), IafEntities.HYDRA.get(), IafEntities.ICE_DRAGON.get(),
-				IafEntities.LIGHTNING_DRAGON.get());
+				IafEntities.LIGHTNING_DRAGON.get(), IafEntities.STONE_STATUE.get());
 		tag(TensuraEntityTags.NO_POSSESSION).add(IafEntities.FIRE_DRAGON.get(), IafEntities.DREAD_LICH.get(),
 				IafEntities.GORGON.get(), IafEntities.HYDRA.get(), IafEntities.ICE_DRAGON.get(),
-				IafEntities.LIGHTNING_DRAGON.get());
+				IafEntities.LIGHTNING_DRAGON.get(), IafEntities.STONE_STATUE.get());
 		tag(TensuraEntityTags.NO_MIND_CONTROL).add(IafEntities.FIRE_DRAGON.get(), IafEntities.DREAD_LICH.get(),
 				IafEntities.GORGON.get(), IafEntities.HYDRA.get(), IafEntities.ICE_DRAGON.get(),
-				IafEntities.LIGHTNING_DRAGON.get());
+				IafEntities.LIGHTNING_DRAGON.get(), IafEntities.STONE_STATUE.get());
 
 		tag(TensuraEntityTags.NO_CHARISMA).add(IafEntities.COCKATRICE.get(),
 				IafEntities.CYCLOPS.get(), IafEntities.DEATH_WORM.get(), IafEntities.DREAD_BEAST.get(),
@@ -68,8 +75,9 @@ public class IafEntityTypeTagProvider extends EntityTypeTagsProvider {
 		tag(TensuraEntityTags.NO_SOUND).add(IafEntities.DRAGON_EGG.get(), IafEntities.DRAGON_SKULL.get(),
 				IafEntities.HIPPOGRYPH_EGG.get(), IafEntities.STONE_STATUE.get(), IafEntities.DEATH_WORM_EGG.get(),
 				IafEntities.COCKATRICE_EGG.get(), IafEntities.STYMPHALIAN_FEATHER.get(),
-				IafEntities.SEA_SERPENT_BUBBLES.get(), IafEntities.CHAIN_TIE.get(), IafEntities.MOB_SKULL.get());
-		tag(TensuraEntityTags.NO_BLOOD).add(IafEntities.DEATH_WORM.get());
+				IafEntities.SEA_SERPENT_BUBBLES.get(), IafEntities.CHAIN_TIE.get(), IafEntities.MOB_SKULL.get(),
+				IafEntities.STONE_STATUE.get());
+		tag(TensuraEntityTags.NO_BLOOD).add(IafEntities.DEATH_WORM.get(), IafEntities.STONE_STATUE.get());
 
 		tag(TensuraEntityTags.COLD_BLOODED).add(IafEntities.HIPPOCAMPUS.get(), IafEntities.SEA_SERPENT.get(),
 				IafEntities.SIREN.get(), IafEntities.HYDRA.get(), IafEntities.COCKATRICE.get(),
