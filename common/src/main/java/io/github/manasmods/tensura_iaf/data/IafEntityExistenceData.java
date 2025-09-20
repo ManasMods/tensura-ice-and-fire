@@ -50,7 +50,7 @@ public class IafEntityExistenceData {
 
 		List<ResourceLocation> gorgonList = new ArrayList<>();
 		gorgonList.add(ExtraSkills.SNAKE_EYE.getId());
-		register(context, EntityExistenceData.getDefault(IafEntities.GORGON.getId(), 2000, 85000, 910000, 10000, 20000, gorgonList));
+		register(context, EntityExistenceData.getDefault(IafEntities.GORGON.getId(), 2000, 85000, 91000, 10000, 20000, gorgonList));
 
 		List<ResourceLocation> hippoList = new ArrayList<>();
 		hippoList.add(IntrinsicSkills.WATER_BREATHING.getId());
