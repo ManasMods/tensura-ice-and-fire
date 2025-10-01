@@ -13,4 +13,4 @@ This Mod doesn't provide any new functionality for Minecraft itself. It requires
 - CANNOT_BE_CHAINED entity tag for boss balancing.
 - Melt dragon steels in dragon forges with Tensura's Dragon Breath Skills.
 - Stage 4/5 Dragons drop Dragon Essences - Configurable.
-- Resistance compatibilities: [Abnormal Condition Nullification] ignores Gorgon's petrification stare, [Cold Nullification] & [Thermal Fluctuation Nullifcation] ignores frozen status from dragons, [Spiritual Attack Nullifcation] ignores Siren's call.
+- Resistance compatibilities: [Abnormal Condition Nullification] ignores Gorgon's petrification stare, [Cold Nullification] & [Thermal Fluctuation Nullifcation] ignores frozen status from dragons, [Thermal Fluctuation/Cold Nullification/Resistance] ignores ice spikes' damage and knockback, [Spiritual Attack Nullifcation] ignores Siren's call.
