@@ -20,5 +20,7 @@ public class MixinIceSpikesBlock {
         if (!(entityIn instanceof LivingEntity entity)) return;
         if (SkillUtils.isSkillToggled(entity, ResistanceSkills.COLD_RESISTANCE.get())) ci.cancel();
         else if (SkillUtils.isSkillToggled(entity, ResistanceSkills.COLD_NULLIFICATION.get())) ci.cancel();
+        else if (SkillUtils.isSkillToggled(entity, ResistanceSkills.THERMAL_FLUCTUATION_RESISTANCE.get())) ci.cancel();
+        else if (SkillUtils.isSkillToggled(entity, ResistanceSkills.THERMAL_FLUCTUATION_NULLIFICATION.get())) ci.cancel();
     }
 }
