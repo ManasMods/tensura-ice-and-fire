@@ -10,8 +10,6 @@ repositories {
 }
 
 dependencies {
-    modRuntimeOnly("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
-
     // QOL mods for Dev Env
     modImplementation("com.terraformersmc:modmenu:11.0.2")
     modImplementation("maven.modrinth:fabric-permissions-api:$fabric_permissions_api_version")

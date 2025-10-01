@@ -185,9 +185,9 @@ subprojects {
             modImplementation "net.tslat.smartbrainlib:SmartBrainLib-common-$rootProject.minecraft_version:$rootProject.sbl_version"
             modImplementation "com.github.glitchfiend:TerraBlender-common:$rootProject.minecraft_version-$rootProject.terrablender_version"
 
-            modImplementation "curse.maven:iceandfire-ce-1040076:6859514"
-            modImplementation "maven.modrinth:uranus:4mfB8LLj"
-            modImplementation "maven.modrinth:jupiter:yHfucqRJ"
+            modImplementation "curse.maven:iceandfire-ce-1040076:7037559"
+            modImplementation "maven.modrinth:uranus:FH0tB0dy"
+            modImplementation "maven.modrinth:jupiter:sitr75nX"
 
             modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
             modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common:${jei_version}")
@@ -211,14 +211,14 @@ subprojects {
             modImplementation "io.github.manasmods:manascore-skill-fabric:$rootProject.manasCoreVersion"
             modImplementation "io.github.manasmods:manascore-storage-fabric:$rootProject.manasCoreVersion"
 
-            implementation "io.github.manasmods.tensura:fabric:$rootProject.tensuraVersion"
+            modImplementation "io.github.manasmods.tensura:fabric:$rootProject.tensuraVersion"
             modImplementation "software.bernie.geckolib:geckolib-fabric-$rootProject.minecraft_version:$rootProject.geckolib_version"
             modImplementation "net.tslat.smartbrainlib:SmartBrainLib-fabric-$rootProject.minecraft_version:$rootProject.sbl_version"
             modImplementation "com.github.glitchfiend:TerraBlender-fabric:$rootProject.minecraft_version-$rootProject.terrablender_version"
 
-            modImplementation "curse.maven:iceandfire-ce-1040076:6859514"
-            modImplementation "maven.modrinth:uranus:4mfB8LLj"
-            modImplementation "maven.modrinth:jupiter:yHfucqRJ"
+            modImplementation "curse.maven:iceandfire-ce-1040076:7037559"
+            modImplementation "maven.modrinth:uranus:FH0tB0dy"
+            modImplementation "maven.modrinth:jupiter:sitr75nX"
         }
 
         if (project.name.endsWith("neoforge")) {
@@ -243,9 +243,9 @@ subprojects {
             implementation "net.tslat.smartbrainlib:SmartBrainLib-neoforge-$rootProject.minecraft_version:$rootProject.sbl_version"
             implementation "com.github.glitchfiend:TerraBlender-neoforge:$rootProject.minecraft_version-$rootProject.terrablender_version"
 
-            implementation "curse.maven:iceandfire-ce-1040076:6859516"
-            modImplementation "maven.modrinth:uranus:ASbYgzAy"
-            modImplementation "maven.modrinth:jupiter:6FVn8sRM"
+            implementation "curse.maven:iceandfire-ce-1040076:7037563"
+            implementation "maven.modrinth:uranus:BBb3HOQ5"
+            implementation "maven.modrinth:jupiter:I4i9vhEW"
         }
     }
 

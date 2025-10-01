@@ -1,6 +1,6 @@
 package io.github.manasmods.tensura_iaf.mixin;
 
-import com.iafenvoy.iceandfire.entity.block.BlockEntityDragonForgeInput;
+import com.iafenvoy.iceandfire.item.block.entity.DragonForgeInputBlockEntity;
 import com.iafenvoy.iceandfire.registry.IafBlocks;
 import io.github.manasmods.tensura.entity.magic.breath.FlameBreathProjectile;
 import net.minecraft.core.BlockPos;
@@ -14,12 +14,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(FlameBreathProjectile.class)
 public class MixinFlameBreathProjectile {
-    @Inject(method = "applyBlockInteraction", at = @At(value = "HEAD"), remap = false, cancellable = true)
+    @Inject(method = "applyBlockInteraction", at = @At(value = "HEAD"), cancellable = true)
     private void applyBlockInteraction(Vec3 pos, BlockPos blockPos, BlockState state, CallbackInfo ci) {
         if (state.is(IafBlocks.DRAGONFORGE_FIRE_INPUT)) {
             FlameBreathProjectile breath = ((FlameBreathProjectile) (Object) this);
             BlockEntity blockEntity = breath.level().getBlockEntity(blockPos);
-            if (!(blockEntity instanceof BlockEntityDragonForgeInput forge)) return;
+            if (!(blockEntity instanceof DragonForgeInputBlockEntity forge)) return;
             if (breath.level().getRandom().nextInt(0, 32) < breath.getDamage()) forge.onHitWithFlame();
             ci.cancel();
         }

@@ -1,7 +1,7 @@
 package io.github.manasmods.tensura_iaf;
 
-import com.iafenvoy.iceandfire.entity.EntityDragonBase;
-import com.iafenvoy.iceandfire.entity.EntityStoneStatue;
+import com.iafenvoy.iceandfire.entity.DragonBaseEntity;
+import com.iafenvoy.iceandfire.entity.StoneStatueEntity;
 import dev.architectury.event.EventResult;
 import io.github.manasmods.manascore.config.ConfigRegistry;
 import io.github.manasmods.manascore.skill.api.EntityEvents;
@@ -15,19 +15,19 @@ public class IafHandler {
 
     public static void init() {
         TensuraSkillEvents.SKILL_PLUNDER.register((target, entity, steal, changeable) -> {
-            if (target instanceof EntityDragonBase dragonBase && (dragonBase.isModelDead() || dragonBase.getDeathStage() > 0))
+            if (target instanceof DragonBaseEntity dragonBase && (dragonBase.isModelDead() || dragonBase.getDeathStage() > 0))
                 return EventResult.interruptFalse();
             return EventResult.pass();
         });
 
         TensuraEntityEvents.ENERGY_DRAIN_EVENT.register((target, drainer, drainType, gainType, amount, percentage) -> {
-            if (target instanceof EntityDragonBase dragonBase && (dragonBase.isModelDead() || dragonBase.getDeathStage() > 0))
+            if (target instanceof DragonBaseEntity dragonBase && (dragonBase.isModelDead() || dragonBase.getDeathStage() > 0))
                 return EventResult.interruptFalse();
             return EventResult.pass();
         });
 
         TensuraEntityEvents.SPIRITUAL_HURT_EVENT.register((target, drainer, drainType, gainType, amount, percentage) -> {
-            if (target instanceof EntityDragonBase dragonBase && (dragonBase.isModelDead() || dragonBase.getDeathStage() > 0))
+            if (target instanceof DragonBaseEntity dragonBase && (dragonBase.isModelDead() || dragonBase.getDeathStage() > 0))
                 return EventResult.interruptFalse();
             return EventResult.pass();
         });
@@ -35,7 +35,7 @@ public class IafHandler {
         EntityEvents.LIVING_EFFECT_ADDED.register((entity, source, changeableInstance) -> {
             MobEffectInstance instance = changeableInstance.get();
             if (instance == null) return EventResult.pass();
-            if (entity instanceof EntityStoneStatue) return EventResult.interruptFalse();
+            if (entity instanceof StoneStatueEntity) return EventResult.interruptFalse();
             return EventResult.pass();
         });
     }

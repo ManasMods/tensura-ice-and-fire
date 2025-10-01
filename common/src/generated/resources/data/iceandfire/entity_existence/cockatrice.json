@@ -3,6 +3,7 @@
   "abilities": [
     "tensura:corrosion"
   ],
+  "evolution": "tensura:basilisk",
   "max_aura": 2000,
   "max_magicule": 6000,
   "min_aura": 1000,

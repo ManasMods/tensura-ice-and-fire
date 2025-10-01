@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(TensuraDamageHelper.class)
 public class MixinTensuraDamageHelper {
-    @Inject(at = @At(value = "HEAD"), method = "isAbnormal", cancellable = true, remap = false)
+    @Inject(at = @At(value = "HEAD"), method = "isAbnormal", cancellable = true)
     private static void isAbnormal(DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
         if (damageSource.is(IafDamageTypes.GORGON_DMG_TYPE)) cir.setReturnValue(true);
     }

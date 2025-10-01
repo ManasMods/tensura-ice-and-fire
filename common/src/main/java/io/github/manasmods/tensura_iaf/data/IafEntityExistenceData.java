@@ -3,6 +3,7 @@ package io.github.manasmods.tensura_iaf.data;
 import com.iafenvoy.iceandfire.registry.IafEntities;
 import io.github.manasmods.tensura.data.existence.EntityExistenceData;
 import io.github.manasmods.tensura.registry.data.TensuraCustomData;
+import io.github.manasmods.tensura.registry.entity.MonsterEntityTypes;
 import io.github.manasmods.tensura.registry.skill.CommonSkills;
 import io.github.manasmods.tensura.registry.skill.ExtraSkills;
 import io.github.manasmods.tensura.registry.skill.IntrinsicSkills;
@@ -10,6 +11,7 @@ import io.github.manasmods.tensura.registry.skill.ResistanceSkills;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +22,7 @@ public class IafEntityExistenceData {
 		
 		List<ResourceLocation> cockatriceList = new ArrayList<>();
 		cockatriceList.add(CommonSkills.CORROSION.getId());
-		register(context, EntityExistenceData.getDefault(IafEntities.COCKATRICE.getId(), 80, 5000, 6000, 1000, 2000, cockatriceList));
+		register(context, EntityExistenceData.getDefault(IafEntities.COCKATRICE.getId(), 80, 5000, 6000, 1000, 2000, cockatriceList, EntityType.getKey(MonsterEntityTypes.BASILISK.get())));
 
 		List<ResourceLocation> cyclopsList = new ArrayList<>();
 		cyclopsList.add(ExtraSkills.STRENGTHEN_BODY.getId());

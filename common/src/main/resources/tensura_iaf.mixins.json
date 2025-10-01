@@ -6,13 +6,14 @@
   "client": [
   ],
   "mixins": [
+    "MixinColdNullification",
     "MixinEntityDragonBase",
     "MixinEntityGorgon",
     "MixinFlameBreathProjectile",
-    "MixinFrozenData",
     "MixinIceBreathProjectile",
+    "MixinIceSpikesBlock",
     "MixinItemChain",
-    "MixinSirenData",
+    "MixinSirenEntity",
     "MixinTensuraDamageHelper",
     "MixinThunderBreathProjectile"
   ],

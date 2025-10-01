@@ -1,9 +1,8 @@
 package io.github.manasmods.tensura_iaf.data;
 
-import com.iafenvoy.iceandfire.data.DragonArmor;
-import com.iafenvoy.iceandfire.data.SeaSerpent;
-import com.iafenvoy.iceandfire.data.TrollType;
+import com.iafenvoy.iceandfire.data.*;
 import com.iafenvoy.iceandfire.registry.IafItems;
+import com.iafenvoy.iceandfire.registry.IafRegistries;
 import io.github.manasmods.tensura.data.existence.gear.GearExistenceData;
 import io.github.manasmods.tensura.data.existence.gear.UniqueGearEvolutionHelper;
 import io.github.manasmods.tensura.registry.data.TensuraCustomData;
@@ -16,7 +15,7 @@ public class IafGearExistenceData {
 		register(context, GearExistenceData.getDefault(IafItems.HIPPOGRYPH_SWORD.getId(), 1000, 0.01, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));
 		register(context, GearExistenceData.getDefault(IafItems.PIXIE_WAND.getId(), 1000, 0.01));
 		register(context, GearExistenceData.getDefault(IafItems.HIPPOCAMPUS_SLAPPER.getId(), 1000, 10.01, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));
-		register(context, GearExistenceData.getDefault(IafItems.ITEM_COCKATRICE_SCEPTER.getId(), 5000, 0.015));
+		register(context, GearExistenceData.getDefault(IafItems.COCKATRICE_SCEPTER.getId(), 5000, 0.015));
 		register(context, GearExistenceData.getDefault(IafItems.AMPHITHERE_MACUAHUITL.getId(), 2000, 0.015, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));
 
 		register(context, GearExistenceData.getDefault(IafItems.GHOST_SWORD.getId(), 2000, 0.015, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));
@@ -42,14 +41,14 @@ public class IafGearExistenceData {
 		register(context, GearExistenceData.getDefault(IafItems.DEATHWORM_WHITE_LEGGINGS.getId(), 1000, 0.01, UniqueGearEvolutionHelper.getLowMagisteelArmors()));
 		register(context, GearExistenceData.getDefault(IafItems.DEATHWORM_WHITE_BOOTS.getId(), 1000, 0.01, UniqueGearEvolutionHelper.getLowMagisteelArmors()));
 
-		for (DragonArmor dragonArmor : DragonArmor.values()) {
+		for (DragonColor dragonArmor : IafRegistries.DRAGON_COLOR.stream().toList()) {
 			register(context, GearExistenceData.getDefault(dragonArmor.helmet.getId(), 6000, 0.02, UniqueGearEvolutionHelper.getHighMagisteelArmors()));
 			register(context, GearExistenceData.getDefault(dragonArmor.chestplate.getId(), 6000, 0.02, UniqueGearEvolutionHelper.getHighMagisteelArmors()));
 			register(context, GearExistenceData.getDefault(dragonArmor.leggings.getId(), 6000, 0.02, UniqueGearEvolutionHelper.getHighMagisteelArmors()));
 			register(context, GearExistenceData.getDefault(dragonArmor.boots.getId(), 6000, 0.02, UniqueGearEvolutionHelper.getHighMagisteelArmors()));
 		}
 
-		for (SeaSerpent seaSerpent : SeaSerpent.values()) {
+		for (SeaSerpentType seaSerpent : SeaSerpentType.values()) {
 			register(context, GearExistenceData.getDefault(seaSerpent.helmet.getId(), 8000, 0.025, UniqueGearEvolutionHelper.getHighMagisteelArmors()));
 			register(context, GearExistenceData.getDefault(seaSerpent.chestplate.getId(), 8000, 0.025, UniqueGearEvolutionHelper.getHighMagisteelArmors()));
 			register(context, GearExistenceData.getDefault(seaSerpent.leggings.getId(), 8000, 0.025, UniqueGearEvolutionHelper.getHighMagisteelArmors()));

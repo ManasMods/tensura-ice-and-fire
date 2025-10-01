@@ -1,6 +1,6 @@
 package io.github.manasmods.tensura_iaf.mixin;
 
-import com.iafenvoy.iceandfire.entity.EntityGorgon;
+import com.iafenvoy.iceandfire.entity.GorgonEntity;
 import com.iafenvoy.iceandfire.registry.tag.IafEntityTags;
 import io.github.manasmods.tensura.ability.SkillUtils;
 import io.github.manasmods.tensura.registry.skill.ResistanceSkills;
@@ -10,9 +10,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(EntityGorgon.class)
+@Mixin(GorgonEntity.class)
 public class MixinEntityGorgon {
-    @Inject(at = @At(value = "HEAD"), method = "isBlindfolded", cancellable = true, remap = false)
+    @Inject(at = @At(value = "HEAD"), method = "isBlindfolded", cancellable = true)
     private static void isBlindfolded(LivingEntity target, CallbackInfoReturnable<Boolean> cir) {
         if (target == null) return;
         if (target.getType().is(IafEntityTags.IMMUNE_TO_GORGON_STONE)) cir.setReturnValue(true);
