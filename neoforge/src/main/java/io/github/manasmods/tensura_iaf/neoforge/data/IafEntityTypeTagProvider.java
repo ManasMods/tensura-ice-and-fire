@@ -88,7 +88,8 @@ public class IafEntityTypeTagProvider extends EntityTypeTagsProvider {
 				IafEntities.ICE_DRAGON.get());
 
 		tag(IafEntityTags.IMMUNE_TO_GORGON_STONE).addTag(TensuraEntityTags.SPIRITUAL)
-				.add(MonsterEntityTypes.ELEMENTAL_COLOSSUS.get(), HumanEntityTypes.HINATA_SAKAGUCHI.get(), MonsterEntityTypes.CHARYBDIS.get());
+				.add(MonsterEntityTypes.BASILISK.get(), MonsterEntityTypes.ELEMENTAL_COLOSSUS.get(),
+                        HumanEntityTypes.HINATA_SAKAGUCHI.get(), MonsterEntityTypes.CHARYBDIS.get());
 		tag(IafEntityTags.CYCLOPS_UNLIFTABLES).addTag(TensuraEntityTags.HERO_BOSS)
 				.add(HumanEntityTypes.HINATA_SAKAGUCHI.get());
 	}

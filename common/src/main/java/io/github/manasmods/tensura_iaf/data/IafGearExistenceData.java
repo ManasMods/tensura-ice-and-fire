@@ -18,7 +18,12 @@ public class IafGearExistenceData {
 		register(context, GearExistenceData.getDefault(IafItems.COCKATRICE_SCEPTER.getId(), 5000, 0.015));
 		register(context, GearExistenceData.getDefault(IafItems.AMPHITHERE_MACUAHUITL.getId(), 2000, 0.015, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));
 
-		register(context, GearExistenceData.getDefault(IafItems.GHOST_SWORD.getId(), 2000, 0.015, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));
+        register(context, GearExistenceData.getDefault(IafItems.LICH_STAFF.getId(), 5000, 0.015, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));
+        register(context, GearExistenceData.getDefault(IafItems.DREAD_SWORD.getId(), 5000, 0.015, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));
+		register(context, GearExistenceData.getDefault(IafItems.DREAD_QUEEN_STAFF.getId(), 5000, 0.015, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));
+        register(context, GearExistenceData.getDefault(IafItems.DREAD_QUEEN_SWORD.getId(), 5000, 0.015, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));
+
+        register(context, GearExistenceData.getDefault(IafItems.GHOST_SWORD.getId(), 2000, 0.015, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));
 		register(context, GearExistenceData.getDefault(IafItems.TIDE_TRIDENT.getId(), 4000, 0.015, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));
 
 		register(context, GearExistenceData.getDefault(IafItems.DRAGONBONE_SWORD.getId(), 2000, 0.015, UniqueGearEvolutionHelper.getLowMagisteelWeapons()));

@@ -1,0 +1,15 @@
+{
+  "modifiers": [
+    {
+      "mode": "ADD",
+      "value": 50000.0
+    }
+  ],
+  "regen_modifiers": [
+    {
+      "mode": "MULTIPLY",
+      "value": 2.0
+    }
+  ],
+  "world": "iceandfire:dread_land"
+}

@@ -1,6 +1,6 @@
-// 1.21.1	2025-09-01T16:14:51.6739489	Tags for minecraft:entity_type mod id tensura_iaf
+// 1.21.1	2026-01-23T19:51:12.0752767	Tags for minecraft:entity_type mod id tensura_iaf
 33f9fcef84315aab55a98ba9c305bcb1c220d040 data/iceandfire/tags/entity_type/cyclops_unliftables.json
-6564d7e9ac99c4c7f0d06fee4570088796bf51ba data/iceandfire/tags/entity_type/immune_to_gorgon_stone.json
+67f33e1f22a04eaeda8e7760d6538b5025f5c231 data/iceandfire/tags/entity_type/immune_to_gorgon_stone.json
 d44be6fd0cf48175080975d52a78dd04dce6a8c5 data/tensura/tags/entity_type/boss_for_hero.json
 330143c635c9e5d0a6cd1150de00dfbc27500ea9 data/tensura/tags/entity_type/can_be_named.json
 45ddafe17a3f157a3a036fdc3b0a6f35e8973bb8 data/tensura/tags/entity_type/can_die_in_labyrinth.json

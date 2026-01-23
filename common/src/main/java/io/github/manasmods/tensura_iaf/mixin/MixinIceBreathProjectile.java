@@ -30,9 +30,9 @@ public class MixinIceBreathProjectile {
     private void placeIceSpike(Vec3 pos, BlockPos blockPos, BlockState state, CallbackInfo ci) {
         IceBreathProjectile breath = ((IceBreathProjectile) (Object) this);
         if (breath.level().getBlockState(blockPos.above()).isAir() && IafBlocks.DRAGON_ICE_SPIKES.get().defaultBlockState().canSurvive(breath.level(), blockPos.above())) {
-            if (!TensuraSkillEvents.SKILL_GRIEF_PRE.invoker().grief(breath.getSkill(), breath.getOwner(), pos.x(), pos.y() + 1, pos.z()).isFalse()) {
+            if (!TensuraSkillEvents.SKILL_GRIEF_PRE.invoker().grief(breath.getSkill(), breath.level(), breath.getOwner(), pos.x(), pos.y() + 1, pos.z()).isFalse()) {
                 breath.level().setBlockAndUpdate(blockPos.above(), IafBlocks.DRAGON_ICE_SPIKES.get().defaultBlockState());
-                TensuraSkillEvents.SKILL_GRIEF_POS.invoker().grief(breath.getSkill(), breath.getOwner(), pos.x(), pos.y() + 1, pos.z());
+                TensuraSkillEvents.SKILL_GRIEF_POS.invoker().grief(breath.getSkill(), breath.level(), breath.getOwner(), pos.x(), pos.y() + 1, pos.z());
             }
         }
     }
