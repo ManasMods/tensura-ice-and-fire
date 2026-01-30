@@ -32,6 +32,7 @@ public class IafEntityTypeTagProvider extends EntityTypeTagsProvider {
 		tag(TensuraEntityTags.NO_SKILL_PLUNDER).add(IafEntities.STONE_STATUE.get());
 		tag(TensuraEntityTags.NO_SPIRITUAL_DAMAGE).add(IafEntities.STONE_STATUE.get());
 		tag(TensuraEntityTags.CAN_DIE_IN_LABYRINTH).add(IafEntities.STONE_STATUE.get());
+        tag(TensuraEntityTags.HINATA_NEUTRAL).add(IafEntities.STONE_STATUE.get());
 
 		tag(TensuraEntityTags.DROP_CRYSTAL).add(IafEntities.AMPHITHERE.get(), IafEntities.COCKATRICE.get(),
 				IafEntities.CYCLOPS.get(), IafEntities.DEATH_WORM.get(), IafEntities.DREAD_BEAST.get(),
@@ -86,6 +87,7 @@ public class IafEntityTypeTagProvider extends EntityTypeTagsProvider {
 				IafEntities.DREAD_KNIGHT.get(), IafEntities.DREAD_HORSE.get(), IafEntities.DREAD_LICH.get(),
 				IafEntities.DREAD_SCUTTLER.get(), IafEntities.DREAD_THRALL.get(), IafEntities.GHOST.get(),
 				IafEntities.ICE_DRAGON.get());
+        tag(TensuraEntityTags.HOT_SOURCE).add(IafEntities.FIRE_DRAGON.get());
 
 		tag(IafEntityTags.IMMUNE_TO_GORGON_STONE).addTag(TensuraEntityTags.SPIRITUAL)
 				.add(MonsterEntityTypes.BASILISK.get(), MonsterEntityTypes.ELEMENTAL_COLOSSUS.get(),

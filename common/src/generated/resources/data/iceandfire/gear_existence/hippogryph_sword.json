@@ -1,6 +1,6 @@
 {
   "type": "iceandfire:hippogryph_sword",
-  "epGain": 0.01,
+  "epGain": 0.005,
   "minEP": 1000,
   "uniqueEvolutions": [
     {

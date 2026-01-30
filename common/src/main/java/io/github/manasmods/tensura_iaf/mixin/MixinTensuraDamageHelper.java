@@ -14,4 +14,26 @@ public class MixinTensuraDamageHelper {
     private static void isAbnormal(DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
         if (damageSource.is(IafDamageTypes.GORGON_DMG_TYPE)) cir.setReturnValue(true);
     }
+
+    @Inject(at = @At(value = "HEAD"), method = "isCold", cancellable = true)
+    private static void isCold(DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
+        if (damageSource.is(IafDamageTypes.DRAGON_ICE_TYPE)) cir.setReturnValue(true);
+    }
+
+    @Inject(at = @At(value = "HEAD"), method = "isFireDamage", cancellable = true)
+    private static void isFireDamage(DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
+        if (damageSource.is(IafDamageTypes.DRAGON_FIRE_TYPE)) cir.setReturnValue(true);
+    }
+
+    @Inject(at = @At(value = "HEAD"), method = "isLightningDamage", cancellable = true)
+    private static void isLightningDamage(DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
+        if (damageSource.is(IafDamageTypes.DRAGON_LIGHTNING_TYPE)) cir.setReturnValue(true);
+    }
+
+    @Inject(at = @At(value = "HEAD"), method = "isPhysicalAttack", cancellable = true)
+    private static void isPhysicalAttack(DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
+        if (damageSource.is(IafDamageTypes.GORGON_DMG_TYPE) || damageSource.is(IafDamageTypes.DRAGON_ICE_TYPE)
+                || damageSource.is(IafDamageTypes.DRAGON_FIRE_TYPE) 
+                || damageSource.is(IafDamageTypes.DRAGON_LIGHTNING_TYPE)) cir.setReturnValue(false);
+    }
 }

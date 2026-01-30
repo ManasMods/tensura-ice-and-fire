@@ -57,7 +57,7 @@ subprojects {
         enableTransitiveAccessWideners = true
 
         runConfigs.each {
-            it.setIdeConfigGenerated(false)
+            it.runDir = "../run/$it.environment"
         }
 
         mixin {

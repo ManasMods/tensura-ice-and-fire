@@ -21,11 +21,12 @@ public abstract class MixinEntityDragonBase extends TamableAnimal {
     @Override
     protected void dropCustomDeathLoot(ServerLevel serverLevel, DamageSource damageSource, boolean bl) {
         DragonBaseEntity dragon = (DragonBaseEntity) (Object) this;
-        IafConfig CONFIG = ConfigRegistry.getConfig(IafConfig.class);
+        IafConfig config = ConfigRegistry.getConfig(IafConfig.class);
+        if (config == null) return;
 
-        if (dragon.getDragonStage() < CONFIG.minStageEssence) return;
-        if (dragon.getDragonStage() > CONFIG.maxStageEssence) return;
-        if (dragon.getRandom().nextFloat() > CONFIG.essenceChance) return;
+        if (dragon.getDragonStage() < config.minStageEssence) return;
+        if (dragon.getDragonStage() > config.maxStageEssence) return;
+        if (dragon.getRandom().nextFloat() > config.essenceChance) return;
         dragon.spawnAtLocation(TensuraMobDropItems.DRAGON_ESSENCE.get());
     }
 }

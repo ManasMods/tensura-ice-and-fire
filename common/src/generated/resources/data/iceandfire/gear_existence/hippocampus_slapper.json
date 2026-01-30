@@ -1,6 +1,6 @@
 {
   "type": "iceandfire:hippocampus_slapper",
-  "epGain": 10.01,
+  "epGain": 0.01,
   "minEP": 1000,
   "uniqueEvolutions": [
     {

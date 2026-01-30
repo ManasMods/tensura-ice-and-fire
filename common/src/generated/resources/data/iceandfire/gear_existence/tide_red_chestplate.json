@@ -1,6 +1,6 @@
 {
   "type": "iceandfire:tide_red_chestplate",
-  "epGain": 0.025,
+  "epGain": 0.01,
   "minEP": 8000,
   "uniqueEvolutions": [
     {

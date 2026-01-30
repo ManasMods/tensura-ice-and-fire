@@ -1,6 +1,6 @@
 {
   "type": "iceandfire:stymphalian_bird_dagger",
-  "epGain": 0.01,
+  "epGain": 0.005,
   "minEP": 1000,
   "uniqueEvolutions": [
     {

@@ -1,6 +1,6 @@
 {
   "type": "iceandfire:amphithere_macuahuitl",
-  "epGain": 0.015,
+  "epGain": 0.01,
   "minEP": 2000,
   "uniqueEvolutions": [
     {

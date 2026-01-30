@@ -19,6 +19,7 @@ public class IafBlockTagProvider extends BlockTagsProvider {
 	}
 
 	protected void addTags(HolderLookup.Provider arg) {
+        tag(TensuraBlockTags.HEAT_SOURCE_BLOCKS).add(IafBlocks.DRAGONFORGE_FIRE_CORE.get(), IafBlocks.DRAGONFORGE_LIGHTNING_CORE.get());
 		tag(TensuraBlockTags.TRAP_BLOCKS).add(IafBlocks.DRAGON_ICE_SPIKES.get());
 		tag(TensuraBlockTags.TREASURE_BLOCKS).add(IafBlocks.GHOST_CHEST.get());
 		tag(TensuraBlockTags.SKILL_UNBREAKABLE).add(IafBlocks.DREAD_SPAWNER.get(),

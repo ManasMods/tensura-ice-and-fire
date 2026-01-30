@@ -1,5 +1,6 @@
 {
   "type": "iceandfire:dragonsteel_ice_shovel",
+  "epGain": 0.025,
   "minEP": 48000,
   "uniqueEvolutions": [
     {

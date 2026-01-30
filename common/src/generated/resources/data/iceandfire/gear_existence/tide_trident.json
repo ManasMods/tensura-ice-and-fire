@@ -1,6 +1,6 @@
 {
   "type": "iceandfire:tide_trident",
-  "epGain": 0.015,
+  "epGain": 0.01,
   "minEP": 4000,
   "uniqueEvolutions": [
     {

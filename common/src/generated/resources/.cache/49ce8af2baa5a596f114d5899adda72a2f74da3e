@@ -1,4 +1,4 @@
-// 1.21.1	2026-01-23T19:51:12.0752767	Tags for minecraft:entity_type mod id tensura_iaf
+// 1.21.1	2026-01-24T19:03:26.9900035	Tags for minecraft:entity_type mod id tensura_iaf
 33f9fcef84315aab55a98ba9c305bcb1c220d040 data/iceandfire/tags/entity_type/cyclops_unliftables.json
 67f33e1f22a04eaeda8e7760d6538b5025f5c231 data/iceandfire/tags/entity_type/immune_to_gorgon_stone.json
 d44be6fd0cf48175080975d52a78dd04dce6a8c5 data/tensura/tags/entity_type/boss_for_hero.json
@@ -9,6 +9,7 @@ d44be6fd0cf48175080975d52a78dd04dce6a8c5 data/tensura/tags/entity_type/boss_for_
 8c22f4613836ccf23a70f936d6613e5bdbada128 data/tensura/tags/entity_type/drop_crystal.json
 45ddafe17a3f157a3a036fdc3b0a6f35e8973bb8 data/tensura/tags/entity_type/ep_initiate_excluded.json
 e0ef26b5688689a2b09283f5fb8fe6ccc6895d3c data/tensura/tags/entity_type/full_gravity_control.json
+168ecbd218db02d77812f37f955e80a73bd69f50 data/tensura/tags/entity_type/hot_source.json
 4fb902c5ae53f68bb6ca43f387f371489ac94c0c data/tensura/tags/entity_type/no_blood.json
 aafe483e36c1843bae954eef5e6025684b57b8ff data/tensura/tags/entity_type/no_charisma.json
 45ddafe17a3f157a3a036fdc3b0a6f35e8973bb8 data/tensura/tags/entity_type/no_current_ep_drain.json

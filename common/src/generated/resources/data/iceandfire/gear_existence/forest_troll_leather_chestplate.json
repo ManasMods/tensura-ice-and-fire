@@ -1,6 +1,6 @@
 {
   "type": "iceandfire:forest_troll_leather_chestplate",
-  "epGain": 0.02,
+  "epGain": 0.01,
   "minEP": 5000,
   "uniqueEvolutions": [
     {

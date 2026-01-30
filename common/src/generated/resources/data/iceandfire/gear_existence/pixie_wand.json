@@ -1,5 +1,5 @@
 {
   "type": "iceandfire:pixie_wand",
-  "epGain": 0.01,
+  "epGain": 0.005,
   "minEP": 1000
 }
