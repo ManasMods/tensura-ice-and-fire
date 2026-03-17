@@ -26,6 +26,7 @@ public class IafEntityTypeTagProvider extends EntityTypeTagsProvider {
 	protected void addTags(@NotNull HolderLookup.Provider provider) {
 		tag(TensuraIafEntityTags.CANNOT_BE_CHAINED).addTag(TensuraEntityTags.HERO_BOSS);
 
+        tag(TensuraEntityTags.NON_LIVING).add(IafEntities.STONE_STATUE.get());
 		tag(TensuraEntityTags.EP_INITIATE_EXCLUDED).add(IafEntities.STONE_STATUE.get());
 		tag(TensuraEntityTags.NO_ENERGY_DRAIN).add(IafEntities.STONE_STATUE.get());
 		tag(TensuraEntityTags.NO_EP_PLUNDER).add(IafEntities.STONE_STATUE.get());

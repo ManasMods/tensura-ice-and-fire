@@ -13,6 +13,7 @@
     "MixinIceBreathProjectile",
     "MixinIceSpikesBlock",
     "MixinItemChain",
+    "MixinRaceUtils",
     "MixinSirenEntity",
     "MixinTensuraDamageHelper",
     "MixinThunderBreathProjectile"
