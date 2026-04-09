@@ -10,6 +10,7 @@ import io.github.manasmods.tensura_iaf.data.TensuraIafEntityTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -24,7 +25,12 @@ public class IafEntityTypeTagProvider extends EntityTypeTagsProvider {
 	}
 
 	protected void addTags(@NotNull HolderLookup.Provider provider) {
-		tag(TensuraIafEntityTags.CANNOT_BE_CHAINED).addTag(TensuraEntityTags.HERO_BOSS);
+		tag(TensuraIafEntityTags.CANNOT_BE_CHAINED).addTag(TensuraEntityTags.HERO_BOSS)
+                .add(HumanEntityTypes.HINATA_SAKAGUCHI.get(), HumanEntityTypes.GAZEL_DWARGO.get(), MonsterEntityTypes.IFRIT_CLONE.get())
+                .addOptional(ResourceLocation.parse("tensura_neb:rimuru_ogre_fight"))
+                .addOptional(ResourceLocation.parse("tensura_neb:rimuru_clone"))
+                .addOptional(ResourceLocation.parse("tensura_neb:carrion"))
+                .addOptional(ResourceLocation.parse("tensura_neb:luminous_valentine"));
 
         tag(TensuraEntityTags.NON_LIVING).add(IafEntities.STONE_STATUE.get());
 		tag(TensuraEntityTags.EP_INITIATE_EXCLUDED).add(IafEntities.STONE_STATUE.get());
@@ -92,8 +98,17 @@ public class IafEntityTypeTagProvider extends EntityTypeTagsProvider {
 
 		tag(IafEntityTags.IMMUNE_TO_GORGON_STONE).addTag(TensuraEntityTags.SPIRITUAL)
 				.add(MonsterEntityTypes.BASILISK.get(), MonsterEntityTypes.ELEMENTAL_COLOSSUS.get(),
-                        HumanEntityTypes.HINATA_SAKAGUCHI.get(), MonsterEntityTypes.CHARYBDIS.get());
+                        HumanEntityTypes.HINATA_SAKAGUCHI.get(), MonsterEntityTypes.CHARYBDIS.get(),
+                        HumanEntityTypes.GAZEL_DWARGO.get(), MonsterEntityTypes.IFRIT_CLONE.get())
+                .addOptional(ResourceLocation.parse("tensura_neb:rimuru_ogre_fight"))
+                .addOptional(ResourceLocation.parse("tensura_neb:rimuru_clone"))
+                .addOptional(ResourceLocation.parse("tensura_neb:carrion"))
+                .addOptional(ResourceLocation.parse("tensura_neb:luminous_valentine"));
 		tag(IafEntityTags.CYCLOPS_UNLIFTABLES).addTag(TensuraEntityTags.HERO_BOSS)
-				.add(HumanEntityTypes.HINATA_SAKAGUCHI.get());
+				.add(HumanEntityTypes.HINATA_SAKAGUCHI.get(), HumanEntityTypes.GAZEL_DWARGO.get(), MonsterEntityTypes.IFRIT_CLONE.get())
+                .addOptional(ResourceLocation.parse("tensura_neb:rimuru_ogre_fight"))
+                .addOptional(ResourceLocation.parse("tensura_neb:rimuru_clone"))
+                .addOptional(ResourceLocation.parse("tensura_neb:carrion"))
+                .addOptional(ResourceLocation.parse("tensura_neb:luminous_valentine"));
 	}
 }

@@ -4,6 +4,24 @@
     "tensura:basilisk",
     "tensura:elemental_colossus",
     "tensura:hinata_sakaguchi",
-    "tensura:charybdis"
+    "tensura:charybdis",
+    "tensura:gazel_dwargo",
+    "tensura:ifrit_clone",
+    {
+      "id": "tensura_neb:rimuru_ogre_fight",
+      "required": false
+    },
+    {
+      "id": "tensura_neb:rimuru_clone",
+      "required": false
+    },
+    {
+      "id": "tensura_neb:carrion",
+      "required": false
+    },
+    {
+      "id": "tensura_neb:luminous_valentine",
+      "required": false
+    }
   ]
 }

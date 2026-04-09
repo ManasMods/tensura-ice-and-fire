@@ -1,5 +1,24 @@
 {
   "values": [
-    "#tensura:boss_for_hero"
+    "#tensura:boss_for_hero",
+    "tensura:hinata_sakaguchi",
+    "tensura:gazel_dwargo",
+    "tensura:ifrit_clone",
+    {
+      "id": "tensura_neb:rimuru_ogre_fight",
+      "required": false
+    },
+    {
+      "id": "tensura_neb:rimuru_clone",
+      "required": false
+    },
+    {
+      "id": "tensura_neb:carrion",
+      "required": false
+    },
+    {
+      "id": "tensura_neb:luminous_valentine",
+      "required": false
+    }
   ]
 }

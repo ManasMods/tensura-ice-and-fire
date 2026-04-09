@@ -1,6 +1,6 @@
-// 1.21.1	2026-03-18T02:08:50.6873829	Tags for minecraft:entity_type mod id tensura_iaf
-33f9fcef84315aab55a98ba9c305bcb1c220d040 data/iceandfire/tags/entity_type/cyclops_unliftables.json
-67f33e1f22a04eaeda8e7760d6538b5025f5c231 data/iceandfire/tags/entity_type/immune_to_gorgon_stone.json
+// 1.21.1	2026-04-09T20:21:26.1416119	Tags for minecraft:entity_type mod id tensura_iaf
+a83023e186386566ca7bb8bcacc7ea361b4b354c data/iceandfire/tags/entity_type/cyclops_unliftables.json
+1e7c71da6424cebf03f6fbdb11ae8523f8b97aac data/iceandfire/tags/entity_type/immune_to_gorgon_stone.json
 d44be6fd0cf48175080975d52a78dd04dce6a8c5 data/tensura/tags/entity_type/boss_for_hero.json
 330143c635c9e5d0a6cd1150de00dfbc27500ea9 data/tensura/tags/entity_type/can_be_named.json
 45ddafe17a3f157a3a036fdc3b0a6f35e8973bb8 data/tensura/tags/entity_type/can_die_in_labyrinth.json
@@ -23,4 +23,4 @@ aafe483e36c1843bae954eef5e6025684b57b8ff data/tensura/tags/entity_type/no_charis
 c3cfddb1e362431e6918ca55bceb4258fca2a8b4 data/tensura/tags/entity_type/no_sound.json
 45ddafe17a3f157a3a036fdc3b0a6f35e8973bb8 data/tensura/tags/entity_type/no_spiritual_damage.json
 eec8384bb2ab15a939db47c31a0265fd153aef5b data/tensura/tags/entity_type/spiritual.json
-e2c76dec100375370b226eae894a1bcc0ea71e0b data/tensura_iaf/tags/entity_type/cannot_be_chained.json
+a83023e186386566ca7bb8bcacc7ea361b4b354c data/tensura_iaf/tags/entity_type/cannot_be_chained.json

@@ -27,7 +27,7 @@ public final class TensuraIafNeoForge {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
-        ExistingFileHelper helper = event.getExistingFileHelper();;
+        ExistingFileHelper helper = event.getExistingFileHelper();
 
         IafBlockTagProvider blockTagsProvider = new IafBlockTagProvider(output, lookupProvider, helper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
